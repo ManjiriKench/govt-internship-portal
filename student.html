@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI-Powered Internship Portal - Dashboard</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .hero-bg {
+            background-color: #1c322b;
+            background-image: url('https://placehold.co/1920x1080/1c322b/1c322b?text=');
+            background-size: cover;
+            background-position: center;
+        }
+        .progress-bar {
+            background-color: #e2e8f0;
+            height: 8px;
+            border-radius: 9999px;
+            overflow: hidden;
+        }
+        .progress-fill {
+            height: 100%;
+            background-color: #32CD32;
+            transition: width 0.5s ease-in-out;
+        }
+        .skill-button.active {
+            background-color: #e49b71;
+            color: white;
+            border-color: #e49b71;
+        }
+    </style>
+</head>
+<body class="bg-gray-100">
+
+    <!-- Tricolor Top Ribbon -->
+    <div class="h-1.5 flex w-full">
+        <div class="bg-orange-500 w-1/3"></div>
+        <div class="bg-white w-1/3"></div>
+        <div class="bg-green-500 w-1/3"></div>
+    </div>
+
+    <!-- Header Section -->
+    <header class="bg-[#1c322b] text-white shadow-lg">
+        <!-- Top Bar -->
+        <div class="bg-[#10201b] text-center py-1 text-xs md:text-sm">
+            <p>Government of India | Ministry of Corporate Affairs (MoCA)</p>
+        </div>
+
+        <!-- Top Navigation Bar -->
+        <nav class="flex items-center justify-between py-4 px-6 md:px-12 lg:px-24 border-b border-gray-700">
+            <div class="flex items-center space-x-4">
+                <img src="mca.jpeg" alt="Government of India Logo" class="h-10 w-auto">
+                <div class="hidden md:flex space-x-4">
+                    <a href="index.html" class="hover:text-gray-300 transition duration-200">Dashboard</a>
+                    <a href="faq.html" class="hover:text-gray-300 transition duration-200">FAQ</a>
+                    <a href="about.html" class="hover:text-gray-300 transition duration-200">About MoCA</a>
+                    <a href="disclaimer.html" class="hover:text-gray-300 transition duration-200">Disclaimer</a>
+                </div>
+            </div>
+            <h1 class="text-xl md:text-2xl font-bold uppercase tracking-wider">AI - GOV. INTERNSHIP SCHEME</h1>
+            <div class="flex items-center space-x-4">
+                <a 
+                    href="org.html" 
+                    class="bg-white text-[#1c322b] px-4 py-2 rounded font-semibold text-sm transition-transform duration-300 hover:scale-105"
+                >Login as organisation</a>
+                <a 
+                    href="student.html" 
+                    class="bg-[#e49b71] text-white px-4 py-2 rounded font-semibold text-sm transition-transform duration-300 hover:scale-105 border border-[#e49b71]"
+                >Student Login</a>
+            </div>
+        </nav>
+        <!-- Welcome Section -->
+        <div class="hero-bg text-white py-16 md:py-24 px-6 md:px-12 lg:px-24 relative z-0">
+            <div class="flex flex-col md:flex-row items-center justify-between md:space-x-8">
+                <div class="text-left w-full">
+                    <h2 class="text-3xl md:text-5xl font-bold leading-tight">Welcome back, Manjiri! </h2>
+                    <p class="text-lg md:text-xl font-light mt-2">Here’s your personalized AI-powered internship feed based on your skills and profile.</p>
+                    <div class="mt-6 w-full max-w-lg">
+                        <!-- Progress Bar Section -->
+                        <div class="flex justify-between items-center mb-2">
+                            <span class="text-sm font-semibold">Your Application Journey: 65% Completed</span>
+                        </div>
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 65%;"></div>
+                        </div>
+                        <div class="mt-4 grid grid-cols-2 sm:grid-cols-4 gap-4 text-sm font-light">
+                            <div class="flex items-center space-x-1">
+                                <span class="text-green-400">✅</span>
+                                <span class="text-xs sm:text-sm">Basic Details</span>
+                            </div>
+                            <div class="flex items-center space-x-1">
+                                <span class="text-green-400">✅</span>
+                                <span class="text-xs sm:text-sm">Resume</span>
+                            </div>
+                            <div class="flex items-center space-x-1">
+                                <span class="text-green-400">✅</span>
+                                <span class="text-xs sm:text-sm">Github</span>
+                            </div>
+                            <div class="flex items-center space-x-1">
+                                <span class="text-gray-400">⚪</span>
+                                <span class="text-xs sm:text-sm">Skills</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Dashboard Layout -->
+    <main class="flex flex-col md:flex-row gap-8 py-12 px-6 md:px-12 lg:px-24 -mt-10 md:-mt-20 rounded-t-3xl shadow-lg relative z-10 bg-white">
+        
+        <!-- Sidebar -->
+        <aside class="w-full md:w-1/4 space-y-8">
+            <!-- Profile Section -->
+            <div class="bg-gray-50 rounded-lg shadow-md p-6 relative">
+                <div class="absolute top-4 right-4 text-gray-400 hover:text-[#e49b71] cursor-pointer transition-transform duration-200 hover:scale-110" id="edit-profile-btn">
+                    <i class="fas fa-pencil-alt"></i>
+                </div>
+                <div class="flex flex-col items-center text-center mb-6">
+                    <img src="https://placehold.co/100x100/808080/FFFFFF?text=MJ" alt="Profile Picture" class="rounded-full mb-4 ring-2 ring-[#e49b71] ring-offset-2 ring-offset-gray-50">
+                    <h3 class="font-bold text-2xl text-[#1c322b]" id="profile-name"></h3>
+                    <p class="text-sm text-gray-600 mt-1" id="profile-university"></p>
+                </div>
+                <div class="space-y-4 text-sm text-gray-700">
+                    <div class="flex items-center space-x-3">
+                        <i class="fas fa-user-circle text-lg text-[#e49b71]"></i>
+                        <p><strong>Age:</strong> <span id="profile-age"></span></p>
+                    </div>
+                    <div class="flex items-center space-x-3">
+                        <i class="fas fa-envelope text-lg text-[#e49b71]"></i>
+                        <p><strong>Email:</strong> <span id="profile-email"></span></p>
+                    </div>
+                    <div class="flex items-center space-x-3">
+                        <i class="fab fa-github text-lg text-[#e49b71]"></i>
+                        <p><strong>GitHub/Portfolio:</strong> <a href="#" class="text-[#e49b71] hover:underline" id="profile-github"></a></p>
+                    </div>
+                    <div class="flex items-center space-x-3">
+                        <i class="fas fa-file-pdf text-lg text-[#e49b71]"></i>
+                        <p><strong>Resume:</strong> <a href="#" class="text-[#e49b71] hover:underline">View</a> / <a href="#" class="text-[#e49b71] hover:underline">Upload</a></p>
+                    </div>
+                    <div class="mt-4">
+                        <p class="font-semibold text-gray-700 mb-2">Skills:</p>
+                        <div class="flex flex-wrap gap-2" id="profile-skills-container">
+                            <!-- Skills will be dynamically added here -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- AI-Powered Filters Section -->
+            <div class="bg-gray-50 rounded-lg shadow-md p-6">
+                <div class="flex items-center justify-between mb-2">
+                    <h3 class="text-xl font-bold text-[#1c322b]">Matchmaker</h3>
+                    <button class="text-sm font-semibold text-gray-500 hover:text-[#e49b71] transition-colors duration-200" id="clear-filters-btn">Clear All</button>
+                </div>
+                <p class="text-sm text-gray-600 mb-4">Select skills to fine-tune your internship recommendations.</p>
+                <div id="skill-filters-container" class="flex flex-wrap gap-2">
+                    <!-- Skill filters will be dynamically added here -->
+                </div>
+            </div>
+
+            <!-- Daily Tips Section -->
+            <div class="bg-white rounded-lg shadow-lg p-6 relative overflow-hidden transition-transform duration-300 hover:scale-105 group">
+                <div class="absolute inset-0 bg-gradient-to-br from-[#e49b71] to-[#1c322b] opacity-10"></div>
+                <div class="relative z-10 flex flex-col items-center text-center">
+                    <i class="fas fa-star text-4xl text-[#1c322b] mb-4 transition-transform duration-500 group-hover:rotate-[360deg] animate-pulse"></i>
+                    <h3 class="text-xl font-bold text-[#1c322b] mb-2" id="daily-tip-title"></h3>
+                    <p class="text-sm text-gray-700 font-light italic" id="daily-tip-content"></p>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Internship Feed -->
+        <section class="w-full md:w-3/4">
+            <h2 class="text-3xl font-bold text-[#1c322b] mb-6">Internships Curated for You</h2>
+            
+            <div class="space-y-6" id="internship-feed-container">
+                <!-- Internship cards will be dynamically added here -->
+            </div>
+        </section>
+
+    </main>
+
+     <!-- Footer Section -->
+    <footer class="bg-[#1c322b] text-white py-12 mt-12">
+        <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 px-6 md:px-12">
+            <!-- Quick Links -->
+            <div>
+                <h3 class="font-semibold mb-4">Quick Links</h3>
+                <ul class="space-y-2 text-sm">
+                    <li><a href="#" class="hover:underline">Home</a></li>
+                    <li><a href="#" class="hover:underline">About MCA</a></li>
+                    <li><a href="#" class="hover:underline">Internship Policy</a></li>
+                    <li><a href="#" class="hover:underline">FAQ</a></li>
+                </ul>
+            </div>
+
+            <!-- Resources -->
+            <div>
+                <h3 class="font-semibold mb-4">Resources</h3>
+                <ul class="space-y-2 text-sm">
+                    <li><a href="#" class="hover:underline">Reports & Publications</a></li>
+                    <li><a href="#" class="hover:underline">Circulars & Notifications</a></li>
+                    <li><a href="#" class="hover:underline">Contact Directory</a></li>
+                </ul>
+            </div>
+
+            <!-- Contact -->
+            <div>
+                <h3 class="font-semibold mb-4">Contact Us</h3>
+                <p class="text-sm">Ministry of Corporate Affairs, Government of India<br>
+                Shastri Bhawan, New Delhi - 110001</p>
+                <p class="mt-2 text-sm">Email: support@mca.gov.in<br>Phone: +91-11-12345678</p>
+            </div>
+        </div>
+
+        <div class="mt-8 border-t border-gray-700 pt-6 text-center text-xs">
+            <p>&copy; 2024 Ministry of Corporate Affairs (MCA). All Rights Reserved.</p>
+            <p class="mt-2">Disclaimer: This is the official internship portal of the Ministry of Corporate Affairs, Government of India. Unauthorized use is strictly prohibited.</p>
+        </div>
+    </footer>
+    
+    <!-- JavaScript for dynamic content -->
+    <script>
+        // --- Profile Section Logic ---
+        const profileData = {
+            name: "Manjiri Kench",
+            university: "Vishwakarma University, Pune",
+            age: 21,
+            email: "manjiri123@gmail.com",
+            github: "github.com/manjiri",
+            skills: ["Python", "Java", "Web Dev", "Data Analysis", "Machine Learning"]
+        };
+
+        const profileName = document.getElementById('profile-name');
+        const profileUniversity = document.getElementById('profile-university');
+        const profileAge = document.getElementById('profile-age');
+        const profileEmail = document.getElementById('profile-email');
+        const profileGithub = document.getElementById('profile-github');
+        const profileSkillsContainer = document.getElementById('profile-skills-container');
+
+        // Populate profile data
+        profileName.textContent = profileData.name;
+        profileUniversity.textContent = profileData.university;
+        profileAge.textContent = profileData.age;
+        profileEmail.textContent = profileData.email;
+        profileGithub.textContent = profileData.github;
+        profileGithub.href = `https://${profileData.github}`;
+
+        // Create and append skill tags
+        profileData.skills.forEach(skill => {
+            const skillSpan = document.createElement('span');
+            skillSpan.className = "bg-[#1c322b] text-white px-3 py-1 rounded-full text-xs font-medium shadow-sm";
+            skillSpan.textContent = skill;
+            profileSkillsContainer.appendChild(skillSpan);
+        });
+
+        document.getElementById('edit-profile-btn').addEventListener('click', () => {
+            console.log("Edit Profile functionality would go here.");
+        });
+
+        // --- Internship Data ---
+        const internshipData = [
+            { title: "Data Scientist Intern", organization: "Digital India Corporation", type: "Govt", skills: ["Python", "Machine Learning", "SQL", "Statistics", "Pandas"], logoText: "DIC", url: "apply1.html" },
+            { title: "Frontend Developer Intern", organization: "Ministry of Technology & Innovation", type: "Govt", skills: ["HTML", "CSS", "JavaScript", "React", "UI/UX"], logoText: "MIN", url: "apply2.html" },
+            { title: "Backend Developer Intern", organization: "Government of Maharashtra", type: "Govt", skills: ["Python", "Django", "SQL", "APIs", "Docker"], logoText: "GOV", url: "apply3.html" },
+            { title: "Full Stack Developer Intern", organization: "TechCorp Solutions", type: "Private", skills: ["HTML", "CSS", "JavaScript", "React", "Node.js", "MongoDB"], logoText: "TECH", url: "apply4.html" },
+            { title: "Cloud Engineer Intern", organization: "Quantum Labs", type: "Private", skills: ["AWS", "Docker", "Linux", "Kubernetes", "CI/CD"], logoText: "QL", url: "apply5.html" },
+            { title: "DevOps Intern", organization: "Innovate India Foundation", type: "NGO", skills: ["Linux", "Docker", "CI/CD", "Jenkins", "Cloud"], logoText: "IIF", url: "apply6.html" },
+            { title: "AI Research Intern", organization: "National Informatics Centre", type: "Govt", skills: ["Python", "Deep Learning", "NLP", "PyTorch", "Mathematics"], logoText: "NIC", url: "apply7.html" },
+            { title: "Business Analyst Intern", organization: "Global Innovations Inc.", type: "Private", skills: ["Excel", "SQL", "Data Visualization", "Tableau", "Business Communication"], logoText: "GII", url: "apply8.html" },
+            { title: "Cybersecurity Intern", organization: "CyberSecure Corp.", type: "Private", skills: ["Networking", "Linux", "Security Tools", "Python", "Penetration Testing"], logoText: "CSC", url: "sample.html" },
+            { title: "Mobile App Developer Intern", organization: "Tech4Good NGO", type: "NGO", skills: ["Java", "Kotlin", "Android Studio", "Firebase", "UI/UX"], logoText: "T4G", url: "sample.html" }
+        ];
+
+        // --- Filters Section Logic ---
+        const skillTypes = ["Python", "Machine Learning", "SQL", "Statistics", "Pandas", "HTML", "CSS", "JavaScript", "React", "UI/UX", "Django", "APIs", "Docker", "Node.js", "MongoDB", "CI/CD",  "Cloud", "Deep Learning", "NLP", "PyTorch",  "Excel", "Data Visualization", "Business Communication", "Networking", "Security Tools", "Penetration Testing", "Java",];
+        const skillFiltersContainer = document.getElementById('skill-filters-container');
+        const internshipFeedContainer = document.getElementById('internship-feed-container');
+
+        // Initial filter state
+        let currentFilters = {
+            types: [],
+            skills: []
+        };
+        
+        function renderInternshipCards(internships) {
+            internshipFeedContainer.innerHTML = '';
+            if (internships.length === 0) {
+                internshipFeedContainer.innerHTML = '<p class="text-center text-gray-500 text-lg">No internships found for the selected skills.</p>';
+            }
+
+            internships.forEach(internship => {
+                const skillTags = internship.skills.map(skill => `<span class="bg-gray-200 text-gray-700 px-3 py-1 rounded-full text-xs font-medium">${skill}</span>`).join('');
+                
+                const cardHtml = `
+                    <div class="bg-gray-50 rounded-lg shadow-md p-6 flex flex-col md:flex-row items-center justify-between transition-transform duration-300 hover:scale-[1.01]">
+                        <div class="flex items-start md:items-center w-full md:w-auto">
+                            <img src="https://placehold.co/60x60/333/FFFFFF?text=${internship.logoText}" alt="Org Logo" class="rounded-lg mr-4 flex-shrink-0">
+                            <div class="flex-grow">
+                                <h4 class="font-bold text-lg">${internship.title}</h4>
+                                <p class="text-sm text-gray-600">${internship.organization} <span class="text-green-600 font-semibold text-xs ml-2">✅ Verified</span></p>
+                                <div class="flex flex-wrap gap-2 mt-2">
+                                    ${skillTags}
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mt-4 md:mt-0 md:ml-6 text-right">
+                            <a href="${internship.url}" class="bg-[#e49b71] text-white px-6 py-2 rounded-full font-semibold transition-transform duration-300 hover:scale-105">View Details / Apply</a>
+                        </div>
+                    </div>
+                `;
+                internshipFeedContainer.innerHTML += cardHtml;
+            });
+        }
+
+        function filterInternships() {
+            const filtered = internshipData.filter(internship => {
+                const typeMatch = currentFilters.types.length === 0 || currentFilters.types.includes(internship.type);
+                const skillMatch = currentFilters.skills.length === 0 || currentFilters.skills.some(skill => internship.skills.includes(skill));
+                return typeMatch && skillMatch;
+            });
+            
+            if (currentFilters.skills.length === 0 && currentFilters.types.length === 0) {
+                renderInternshipCards(internshipData.slice(0, 8));
+            } else {
+                renderInternshipCards(filtered);
+            }
+        }
+
+        // Add skill filter buttons
+        skillTypes.forEach(skill => {
+            const skillButton = document.createElement('button');
+            skillButton.className = "skill-button px-4 py-2 text-sm rounded-full border border-gray-300 transition-colors duration-200 hover:bg-[#e49b71] hover:text-white hover:border-[#e49b71]";
+            skillButton.textContent = skill;
+            skillButton.dataset.skill = skill;
+            skillFiltersContainer.appendChild(skillButton);
+        });
+
+        // Add event listeners for skill filters
+        document.querySelectorAll('#skill-filters-container button').forEach(button => {
+            button.addEventListener('click', (event) => {
+                const skill = event.target.dataset.skill;
+                if (currentFilters.skills.includes(skill)) {
+                    currentFilters.skills = currentFilters.skills.filter(s => s !== skill);
+                    event.target.classList.remove('active');
+                } else {
+                    currentFilters.skills.push(skill);
+                    event.target.classList.add('active');
+                }
+                filterInternships();
+            });
+        });
+
+        document.getElementById('clear-filters-btn').addEventListener('click', () => {
+            document.querySelectorAll('#skill-filters-container button').forEach(button => {
+                button.classList.remove('active');
+            });
+            currentFilters.skills = [];
+            filterInternships();
+        });
+
+        // --- Daily Tips Section Logic ---
+        const dailyTips = [
+            {
+                title: "Resume Power-Up",
+                content: "Customize your resume for each application to show companies you're the perfect fit. Highlight skills relevant to the role!"
+            },
+            {
+                title: "Networking 101",
+                content: "Connect with professionals on LinkedIn. A strong network is a powerful asset in your career journey."
+            },
+            {
+                title: "Master the Interview",
+                content: "Record yourself answering common interview questions to practice your confidence and clarity. "
+            },
+            {
+                title: "Showcase Your Work",
+                content: "Don't just talk about your projects, show them! Your GitHub and a personal portfolio are your best friends."
+            },
+            {
+                title: "Research is Key",
+                content: "Before any interview, research the company's mission and values. It shows genuine interest and helps you ask smart questions."
+            },
+            {
+                title: "Follow-Up Etiquette",
+                content: "Always send a thank-you note or email after an interview. It's a small gesture that leaves a big impression."
+            },
+            {
+                title: "The Lifelong Learner",
+                content: "The tech world moves fast. Stay updated on the latest trends and technologies to keep your skills sharp."
+            }
+        ];
+
+        function getRandomTip() {
+            const randomIndex = Math.floor(Math.random() * dailyTips.length);
+            return dailyTips[randomIndex];
+        }
+
+        const dailyTipTitleElement = document.getElementById('daily-tip-title');
+        const dailyTipContentElement = document.getElementById('daily-tip-content');
+        
+        const tip = getRandomTip();
+        dailyTipTitleElement.textContent = tip.title;
+        dailyTipContentElement.textContent = tip.content;
+
+
+        // Initial render of a curated mix of the first 8 internships
+        renderInternshipCards(internshipData.slice(0, 8));
+
+    </script>
+</body>
+</html>

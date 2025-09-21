@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI-Powered Internship Portal - Student Registration</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .hero-bg {
+            background-color: #1c322b;
+            background-image: url('https://placehold.co/1920x1080/1c322b/1c322b?text=');
+            background-size: cover;
+            background-position: center;
+        }
+    </style>
+</head>
+<body class="bg-gray-100">
+
+    <!-- Header Section -->
+    <header class="bg-[#1c322b] text-white shadow-lg">
+        <!-- Top Navigation Bar -->
+        <nav class="flex items-center justify-between py-4 px-6 md:px-12 lg:px-24 border-b border-gray-700">
+            <div class="flex items-center space-x-4">
+                <img src="mca.jpeg" alt="Government of India Logo" class="h-10 w-auto">
+                <div class="hidden md:flex space-x-4">
+                    <a href="index.html" class="hover:text-gray-300 transition duration-200">Dashboard</a>
+                    <a href="faq.html" class="hover:text-gray-300 transition duration-200">FAQ</a>
+                    <a href="about.html" class="hover:text-gray-300 transition duration-200">About MoCA</a>
+                    <a href="disclaimer.html" class="hover:text-gray-300 transition duration-200">Disclaimer</a>
+                </div>
+            </div>
+            <h1 class="text-xl md:text-2xl font-bold">GOV. INTERNSHIP SCHEME</h1>
+            <div class="flex items-center space-x-4">
+                <button 
+                    class="bg-[#e49b71] text-white px-4 py-2 rounded-full font-semibold transition-transform duration-300 hover:scale-105 text-sm hidden md:block"
+                    onclick="window.location.href='organisation.html'"
+                >Login as Organization</button>
+                <a 
+                    href="slogin.html" 
+                    class="bg-white text-[#1c322b] px-4 py-2 rounded-full font-semibold text-sm transition-transform duration-300 hover:scale-105"
+                >Student</a>
+            </div>
+        </nav>
+
+        <!-- Hero Content Section -->
+        <div class="hero-bg text-white py-20 md:py-28 px-6 md:px-12 lg:px-24 relative z-0">
+            <div class="flex flex-col md:flex-row items-center justify-between md:space-x-8">
+                <div class="text-left w-full mb-8 md:mb-0">
+                    <h2 class="text-3xl md:text-5xl font-bold leading-tight">Student Registration</h2>
+                    <p class="text-lg md:text-xl font-light mt-4">Create your account to start your journey with AI-powered internship matching.</p>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content Section - Registration Form -->
+    <main class="py-12 px-6 md:px-12 lg:px-24 -mt-10 md:-mt-20 relative z-10 flex justify-center items-center">
+        <div class="bg-white rounded-lg shadow-xl p-8 w-full max-w-2xl">
+            <h3 class="text-3xl font-bold text-center text-[#1c322b] mb-6">Create Account</h3>
+            
+            <form id="registrationForm" onsubmit="handleRegistration(event)" class="space-y-6">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div>
+                        <label for="fullName" class="block text-sm font-medium text-gray-700">Full Name</label>
+                        <p class="text-xs text-gray-500">(Enter your complete name as per official records)</p>
+                        <input type="text" id="fullName" name="fullName" required placeholder="e.g., Manjiri Kench"
+                               class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-[#e49b71] focus:border-[#e49b71] transition duration-200">
+                    </div>
+                    <div>
+                        <label for="email" class="block text-sm font-medium text-gray-700">Email Address</label>
+                        <p class="text-xs text-gray-500">(This will be your primary login ID)</p>
+                        <input type="email" id="email" name="email" required placeholder="e.g., manjiri123@gmail.com"
+                               class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-[#e49b71] focus:border-[#e49b71] transition duration-200">
+                    </div>
+                    <div>
+                        <label for="password" class="block text-sm font-medium text-gray-700">Password</label>
+                        <p class="text-xs text-gray-500">(Minimum 8 characters, with one number & special character)</p>
+                        <input type="password" id="password" name="password" required placeholder="••••••"
+                               class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-[#e49b71] focus:border-[#e49b71] transition duration-200">
+                    </div>
+                    <div>
+                        <label for="confirmPassword" class="block text-sm font-medium text-gray-700">Confirm Password</label>
+                        <p class="text-xs text-gray-500">(Re-enter your password)</p>
+                        <input type="password" id="confirmPassword" name="confirmPassword" required placeholder="••••••"
+                               class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-[#e49b71] focus:border-[#e49b71] transition duration-200">
+                    </div>
+                    <div>
+                        <label for="phone" class="block text-sm font-medium text-gray-700">Phone Number</label>
+                        <p class="text-xs text-gray-500">(For verification & internship alerts)</p>
+                        <input type="tel" id="phone" name="phone" required placeholder="+91 9876543210"
+                               class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-[#e49b71] focus:border-[#e49b71] transition duration-200">
+                    </div>
+                    <div>
+                        <label for="college" class="block text-sm font-medium text-gray-700">College / University Name</label>
+                        <input type="text" id="college" name="college" required placeholder="e.g., Vishwakarma University, Pune"
+                               class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-[#e49b71] focus:border-[#e49b71] transition duration-200">
+                    </div>
+                    <div>
+                        <label for="year" class="block text-sm font-medium text-gray-700">Year of Study</label>
+                        <select id="year" name="year" required
+                                class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-[#e49b71] focus:border-[#e49b71] transition duration-200">
+                            <option value="">Select Year</option>
+                            <option value="FY">FY</option>
+                            <option value="SY">SY</option>
+                            <option value="TY">TY</option>
+                            <option value="Final Year">Final Year</option>
+                            <option value="Graduate">Graduate</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label for="branch" class="block text-sm font-medium text-gray-700">Degree / Branch</label>
+                        <input type="text" id="branch" name="branch" required placeholder="e.g., B.Tech CSE"
+                               class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-[#e49b71] focus:border-[#e49b71] transition duration-200">
+                    </div>
+                    <div>
+                        <label for="location" class="block text-sm font-medium text-gray-700">Location (City, State)</label>
+                        <input type="text" id="location" name="location" required placeholder="e.g., Pune, Maharashtra"
+                               class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-[#e49b71] focus:border-[#e49b71] transition duration-200">
+                    </div>
+                    <div>
+                        <label for="interests" class="block text-sm font-medium text-gray-700">Interests (Optional)</label>
+                        <input type="text" id="interests" name="interests" placeholder="AI, Data Science, Web Dev, Cloud, Cybersecurity, Govt. Policy"
+                               class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-[#e49b71] focus:border-[#e49b71] transition duration-200">
+                    </div>
+                    <div class="md:col-span-2">
+                        <label for="resume" class="block text-sm font-medium text-gray-700">Upload Resume (Optional at Signup)</label>
+                        <p class="text-xs text-gray-500">(PDF format only, Max 5MB)</p>
+                        <input type="file" id="resume" name="resume" accept=".pdf"
+                               class="mt-1 block w-full text-sm text-gray-500 file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-sm file:font-semibold file:bg-gray-200 file:text-gray-700 hover:file:bg-gray-300 transition duration-200">
+                    </div>
+                </div>
+
+                <div class="mt-6 space-y-4">
+                    <div class="flex items-start">
+                        <div class="flex items-center h-5">
+                            <input id="agreeTerms" name="agreeTerms" type="checkbox" required class="focus:ring-[#e49b71] h-4 w-4 text-[#e49b71] border-gray-300 rounded">
+                        </div>
+                        <div class="ml-3 text-sm">
+                            <label for="agreeTerms" class="font-medium text-gray-700">I agree to the <a href="#" class="text-[#e49b71] hover:underline">Terms & Conditions</a> & <a href="#" class="text-[#e49b71] hover:underline">Privacy Policy</a></label>
+                        </div>
+                    </div>
+                    <div class="flex items-start">
+                        <div class="flex items-center h-5">
+                            <input id="receiveAlerts" name="receiveAlerts" type="checkbox" class="focus:ring-[#e49b71] h-4 w-4 text-[#e49b71] border-gray-300 rounded">
+                        </div>
+                        <div class="ml-3 text-sm">
+                            <label for="receiveAlerts" class="font-medium text-gray-700">I want to receive internship alerts & AI-based recommendations</label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mt-6">
+                    <button type="submit" onclick="window.location.href='student.html'" 
+                            class="w-full flex justify-center py-3 px-4 border border-transparent rounded-md shadow-sm text-lg font-bold text-white bg-[#e49b71] hover:bg-[#b47a5a] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#e49b71] transition duration-200 transform hover:scale-105">
+                        Register & Start My AI Journey
+                    </button>
+                </div>
+            </form>
+
+            <div class="mt-6 text-center text-sm">
+                <p class="font-bold">Already have an account? <a href="slogin.html" class="font-medium text-[#e49b71] hover:text-[#b47a5a] transition duration-200">Login here</a></p>
+                <p class="text-gray-500 mt-2"> Your Skills + AI Guidance = The Perfect Match for Government & Industry Internships in Bharat.</p>
+            </div>
+            
+            <div id="messageBox" class="mt-4 p-4 rounded-md hidden"></div>
+        </div>
+    </main>
+
+     <!-- Footer Section -->
+    <footer class="bg-[#1c322b] text-white py-12 mt-12">
+        <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 px-6 md:px-12">
+            <!-- Quick Links -->
+            <div>
+                <h3 class="font-semibold mb-4">Quick Links</h3>
+                <ul class="space-y-2 text-sm">
+                    <li><a href="#" class="hover:underline">Home</a></li>
+                    <li><a href="#" class="hover:underline">About MCA</a></li>
+                    <li><a href="#" class="hover:underline">Internship Policy</a></li>
+                    <li><a href="#" class="hover:underline">FAQ</a></li>
+                </ul>
+            </div>
+
+            <!-- Resources -->
+            <div>
+                <h3 class="font-semibold mb-4">Resources</h3>
+                <ul class="space-y-2 text-sm">
+                    <li><a href="#" class="hover:underline">Reports & Publications</a></li>
+                    <li><a href="#" class="hover:underline">Circulars & Notifications</a></li>
+                    <li><a href="#" class="hover:underline">Contact Directory</a></li>
+                </ul>
+            </div>
+
+            <!-- Contact -->
+            <div>
+                <h3 class="font-semibold mb-4">Contact Us</h3>
+                <p class="text-sm">Ministry of Corporate Affairs, Government of India<br>
+                Shastri Bhawan, New Delhi - 110001</p>
+                <p class="mt-2 text-sm">Email: support@mca.gov.in<br>Phone: +91-11-12345678</p>
+            </div>
+        </div>
+
+        <div class="mt-8 border-t border-gray-700 pt-6 text-center text-xs">
+            <p>&copy; 2024 Ministry of Corporate Affairs (MCA). All Rights Reserved.</p>
+            <p class="mt-2">Disclaimer: This is the official internship portal of the Ministry of Corporate Affairs, Government of India. Unauthorized use is strictly prohibited.</p>
+        </div>
+    </footer>
+    <script>
+        function handleRegistration(event) {
+            event.preventDefault(); // Prevent the form from submitting normally
+            
+            const form = event.target;
+            const messageBox = document.getElementById('messageBox');
+            
+            const formData = new FormData(form);
+            const data = Object.fromEntries(formData.entries());
+
+            // Check if passwords match
+            if (data.password !== data.confirmPassword) {
+                messageBox.textContent = 'Passwords do not match. Please try again.';
+                messageBox.className = 'mt-4 p-4 rounded-md bg-red-100 text-red-700 border border-red-300 block';
+                return;
+            }
+
+            // For demonstration, just log to console and show a message
+            console.log('Registration Data:', data);
+            
+            messageBox.textContent = 'Registration successful! You can now log in.';
+            messageBox.className = 'mt-4 p-4 rounded-md bg-green-100 text-green-700 border border-green-300 block';
+
+            // In a real application, you would send this data to a server for processing.
+        }
+    </script>
+</body>
+</html>

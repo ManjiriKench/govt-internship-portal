@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI-Powered Internship Portal - FAQ</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .hero-bg {
+            background-color: #1c322b;
+            background-image: url('https://placehold.co/1920x1080/1c322b/1c322b?text=');
+            background-size: cover;
+            background-position: center;
+        }
+        /* Style for the collapsible content */
+        .faq-content.hidden {
+            max-height: 0;
+            padding-top: 0;
+            padding-bottom: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out, padding 0.3s ease-out;
+        }
+        .faq-content {
+            max-height: 500px; /* A large value to allow for expansion */
+            transition: max-height 0.3s ease-in, padding 0.3s ease-in;
+        }
+        .faq-trigger svg {
+            transition: transform 0.3s ease-in-out;
+        }
+        .faq-trigger[aria-expanded="true"] svg {
+            transform: rotate(180deg);
+        }
+    </style>
+</head>
+<body class="bg-gray-100">
+
+    <!-- Header Section -->
+    <header class="bg-[#1c322b] text-white shadow-lg">
+        <!-- Top Navigation Bar -->
+        <nav class="flex items-center justify-between py-4 px-6 md:px-12 lg:px-24 border-b border-gray-700">
+           <div class="flex items-center space-x-4">
+                <img src="mca.jpeg" alt="Government of India Logo" class="h-10 w-auto">
+                <div class="hidden md:flex space-x-4">
+                    <a href="index.html" class="hover:text-gray-300 transition duration-200">Dashboard</a>
+                    <a href="faq.html" class="hover:text-gray-300 transition duration-200">FAQ</a>
+                    <a href="about.html" class="hover:text-gray-300 transition duration-200">About MoCA</a>
+                    <a href="disclaimer.html" class="hover:text-gray-300 transition duration-200">Disclaimer</a>
+                </div>
+            </div>
+            </div>
+            <h1 class="text-xl md:text-2xl font-bold">GOV. INTERNSHIP SCHEME</h1>
+            <div class="flex items-center space-x-4">
+                <button 
+                    class="bg-[#e49b71] text-white px-4 py-2 rounded-full font-semibold transition-transform duration-300 hover:scale-105 text-sm hidden md:block"
+                    onclick="window.location.href='organisation.html'"
+                >Login as Organization</button>
+                <a 
+                    href="#" 
+                    class="bg-white text-[#1c322b] px-4 py-2 rounded-full font-semibold text-sm transition-transform duration-300 hover:scale-105"
+                    onclick="window.location.href='student.html'"
+                >Student</a>
+            </div>
+        </nav>
+
+        <!-- Hero Content Section -->
+        <div class="hero-bg text-white py-20 md:py-28 px-6 md:px-12 lg:px-24 relative z-0">
+            <div class="flex flex-col md:flex-row items-center justify-between md:space-x-8">
+                <div class="text-left w-full mb-8 md:mb-0">
+                    <h2 class="text-3xl md:text-5xl font-bold leading-tight">Frequently Asked Questions</h2>
+                    <p class="text-lg md:text-xl font-light mt-4">Find answers to common questions about our AI-powered internship portal.</p>
+                </div>
+            </div>
+        </div>
+
+    </header>
+
+    <!-- Main Content Section - FAQ Cards -->
+    <main class="bg-white py-12 px-6 md:px-12 lg:px-24 -mt-10 md:-mt-20 rounded-t-3xl shadow-lg relative z-10">
+        <div class="max-w-4xl mx-auto space-y-8">
+            
+            <!-- FAQ Section: For Students -->
+            <div class="bg-gray-50 rounded-lg shadow-md p-6 sm:p-8 transition-transform duration-300 hover:scale-105">
+                <h3 class="text-2xl font-bold text-[#1c322b] mb-6">For Students</h3>
+                <div class="space-y-4">
+                    <!-- Collapsible Question 1 -->
+                    <div class="border-b border-gray-300 pb-4">
+                        <button class="faq-trigger flex justify-between items-center w-full text-left font-semibold text-lg hover:text-gray-700 focus:outline-none" aria-expanded="false" onclick="toggleFAQ(this)">
+                            Who can apply for internships?
+                            <svg class="w-6 h-6 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                        </button>
+                        <div class="faq-content hidden pt-4">
+                            <p class="text-gray-600 mt-1">Any registered student from recognized colleges/universities in India.</p>
+                        </div>
+                    </div>
+                    <!-- Collapsible Question 2 -->
+                    <div class="border-b border-gray-300 pb-4">
+                        <button class="faq-trigger flex justify-between items-center w-full text-left font-semibold text-lg hover:text-gray-700 focus:outline-none" aria-expanded="false" onclick="toggleFAQ(this)">
+                            How does the AI recommendation system work?
+                            <svg class="w-6 h-6 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                        </button>
+                        <div class="faq-content hidden pt-4">
+                            <p class="text-gray-600 mt-1">The system uses NLP (like BERT) to analyze your resume and match your skills with internship requirements.</p>
+                        </div>
+                    </div>
+                    <!-- Collapsible Question 3 -->
+                    <div class="border-b border-gray-300 pb-4">
+                        <button class="faq-trigger flex justify-between items-center w-full text-left font-semibold text-lg hover:text-gray-700 focus:outline-none" aria-expanded="false" onclick="toggleFAQ(this)">
+                            Is uploading a resume mandatory?
+                            <svg class="w-6 h-6 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                        </button>
+                        <div class="faq-content hidden pt-4">
+                            <p class="text-gray-600 mt-1">Yes, because the AI system needs it to suggest relevant internships and highlight skill gaps.</p>
+                        </div>
+                    </div>
+                    <!-- Collapsible Question 4 -->
+                    <div class="border-b border-gray-300 pb-4">
+                        <button class="faq-trigger flex justify-between items-center w-full text-left font-semibold text-lg hover:text-gray-700 focus:outline-none" aria-expanded="false" onclick="toggleFAQ(this)">
+                            Are these internships verified?
+                            <svg class="w-6 h-6 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                        </button>
+                        <div class="faq-content hidden pt-4">
+                            <p class="text-gray-600 mt-1">Yes, all internships are posted by verified government organizations/departments and approved by the admin.</p>
+                        </div>
+                    </div>
+                    <!-- Collapsible Question 5 -->
+                    <div class="border-b border-gray-300 pb-4">
+                        <button class="faq-trigger flex justify-between items-center w-full text-left font-semibold text-lg hover:text-gray-700 focus:outline-none" aria-expanded="false" onclick="toggleFAQ(this)">
+                            Can I update my resume or skills later?
+                            <svg class="w-6 h-6 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                        </button>
+                        <div class="faq-content hidden pt-4">
+                            <p class="text-gray-600 mt-1">Yes, you can edit and re-upload your resume anytime.</p>
+                        </div>
+                    </div>
+                    <!-- Collapsible Question 6 -->
+                    <div class="border-b border-gray-300 pb-4">
+                        <button class="faq-trigger flex justify-between items-center w-full text-left font-semibold text-lg hover:text-gray-700 focus:outline-none" aria-expanded="false" onclick="toggleFAQ(this)">
+                            Do these internships provide stipends?
+                            <svg class="w-6 h-6 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                        </button>
+                        <div class="faq-content hidden pt-4">
+                            <p class="text-gray-600 mt-1">Some do, some don’t. The internship card will mention if a stipend is available.</p>
+                        </div>
+                    </div>
+                    <!-- Collapsible Question 7 -->
+                    <div class="border-b border-gray-300 pb-4">
+                        <button class="faq-trigger flex justify-between items-center w-full text-left font-semibold text-lg hover:text-gray-700 focus:outline-none" aria-expanded="false" onclick="toggleFAQ(this)">
+                            Will my data be safe?
+                            <svg class="w-6 h-6 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                        </button>
+                        <div class="faq-content hidden pt-4">
+                            <p class="text-gray-600 mt-1">Yes, your data is encrypted and only used for internship matching purposes.</p>
+                        </div>
+                    </div>
+                    <!-- Collapsible Question 8 -->
+                    <div class="pb-4">
+                        <button class="faq-trigger flex justify-between items-center w-full text-left font-semibold text-lg hover:text-gray-700 focus:outline-none" aria-expanded="false" onclick="toggleFAQ(this)">
+                            How do I improve my match score?
+                            <svg class="w-6 h-6 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                        </button>
+                        <div class="faq-content hidden pt-4">
+                            <p class="text-gray-600 mt-1">The AI will show you missing skills and suggest learning resources to improve your profile.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- FAQ Section: For Organizations -->
+            <div class="bg-gray-50 rounded-lg shadow-md p-6 sm:p-8 transition-transform duration-300 hover:scale-105">
+                <h3 class="text-2xl font-bold text-[#1c322b] mb-6">For Organizations / Govt. Bodies</h3>
+                <div class="space-y-4">
+                    <!-- Collapsible Question 1 -->
+                    <div class="border-b border-gray-300 pb-4">
+                        <button class="faq-trigger flex justify-between items-center w-full text-left font-semibold text-lg hover:text-gray-700 focus:outline-none" aria-expanded="false" onclick="toggleFAQ(this)">
+                            Who can post internships?
+                            <svg class="w-6 h-6 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                        </button>
+                        <div class="faq-content hidden pt-4">
+                            <p class="text-gray-600 mt-1">Only verified government departments, ministries, or registered institutions.</p>
+                        </div>
+                    </div>
+                    <!-- Collapsible Question 2 -->
+                    <div class="border-b border-gray-300 pb-4">
+                        <button class="faq-trigger flex justify-between items-center w-full text-left font-semibold text-lg hover:text-gray-700 focus:outline-none" aria-expanded="false" onclick="toggleFAQ(this)">
+                            How are student matches shown?
+                            <svg class="w-6 h-6 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                        </button>
+                        <div class="faq-content hidden pt-4">
+                            <p class="text-gray-600 mt-1">The AI highlights top candidates based on skills and eligibility.</p>
+                        </div>
+                    </div>
+                    <!-- Collapsible Question 3 -->
+                    <div class="border-b border-gray-300 pb-4">
+                        <button class="faq-trigger flex justify-between items-center w-full text-left font-semibold text-lg hover:text-gray-700 focus:outline-none" aria-expanded="false" onclick="toggleFAQ(this)">
+                            Can I track applications?
+                            <svg class="w-6 h-6 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                        </button>
+                        <div class="faq-content hidden pt-4">
+                            <p class="text-gray-600 mt-1">Yes, you can view applicants, see AI-suggested matches, and manage applications in your dashboard.</p>
+                        </div>
+                    </div>
+                    <!-- Collapsible Question 4 -->
+                    <div class="pb-4">
+                        <button class="faq-trigger flex justify-between items-center w-full text-left font-semibold text-lg hover:text-gray-700 focus:outline-none" aria-expanded="false" onclick="toggleFAQ(this)">
+                            Is there an approval process for posted internships?
+                            <svg class="w-6 h-6 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                        </button>
+                        <div class="faq-content hidden pt-4">
+                            <p class="text-gray-600 mt-1">Yes, every internship goes through admin verification before being published.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- FAQ Section: General / Common -->
+            <div class="bg-gray-50 rounded-lg shadow-md p-6 sm:p-8 transition-transform duration-300 hover:scale-105">
+                <h3 class="text-2xl font-bold text-[#1c322b] mb-6">General / Common</h3>
+                <div class="space-y-4">
+                    <!-- Collapsible Question 1 -->
+                    <div class="border-b border-gray-300 pb-4">
+                        <button class="faq-trigger flex justify-between items-center w-full text-left font-semibold text-lg hover:text-gray-700 focus:outline-none" aria-expanded="false" onclick="toggleFAQ(this)">
+                            What is the purpose of this portal?
+                            <svg class="w-6 h-6 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                        </button>
+                        <div class="faq-content hidden pt-4">
+                            <p class="text-gray-600 mt-1">To provide students with easy access to authentic government internships and use AI to bridge skill gaps.</p>
+                        </div>
+                    </div>
+                    <!-- Collapsible Question 2 -->
+                    <div class="border-b border-gray-300 pb-4">
+                        <button class="faq-trigger flex justify-between items-center w-full text-left font-semibold text-lg hover:text-gray-700 focus:outline-none" aria-expanded="false" onclick="toggleFAQ(this)">
+                            Is this an official government platform?
+                            <svg class="w-6 h-6 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                        </button>
+                        <div class="faq-content hidden pt-4">
+                            <p class="text-gray-600 mt-1">This portal is developed under the Smart India Hackathon (SIH) project for enhancing internship opportunities.</p>
+                        </div>
+                    </div>
+                    <!-- Collapsible Question 3 -->
+                    <div class="border-b border-gray-300 pb-4">
+                        <button class="faq-trigger flex justify-between items-center w-full text-left font-semibold text-lg hover:text-gray-700 focus:outline-none" aria-expanded="false" onclick="toggleFAQ(this)">
+                            Do I need to pay to use this platform?
+                            <svg class="w-6 h-6 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                        </button>
+                        <div class="faq-content hidden pt-4">
+                            <p class="text-gray-600 mt-1">No, it’s completely free for both students and organizations.</p>
+                        </div>
+                    </div>
+                    <!-- Collapsible Question 4 -->
+                    <div class="pb-4">
+                        <button class="faq-trigger flex justify-between items-center w-full text-left font-semibold text-lg hover:text-gray-700 focus:outline-none" aria-expanded="false" onclick="toggleFAQ(this)">
+                            Whom do I contact for support?
+                            <svg class="w-6 h-6 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                        </button>
+                        <div class="faq-content hidden pt-4">
+                            <p class="text-gray-600 mt-1">You can reach us via the Contact Support page.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+     <!-- Footer Section -->
+    <footer class="bg-[#1c322b] text-white py-12 mt-12">
+        <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 px-6 md:px-12">
+            <!-- Quick Links -->
+            <div>
+                <h3 class="font-semibold mb-4">Quick Links</h3>
+                <ul class="space-y-2 text-sm">
+                    <li><a href="#" class="hover:underline">Home</a></li>
+                    <li><a href="#" class="hover:underline">About MCA</a></li>
+                    <li><a href="#" class="hover:underline">Internship Policy</a></li>
+                    <li><a href="#" class="hover:underline">FAQ</a></li>
+                </ul>
+            </div>
+
+            <!-- Resources -->
+            <div>
+                <h3 class="font-semibold mb-4">Resources</h3>
+                <ul class="space-y-2 text-sm">
+                    <li><a href="#" class="hover:underline">Reports & Publications</a></li>
+                    <li><a href="#" class="hover:underline">Circulars & Notifications</a></li>
+                    <li><a href="#" class="hover:underline">Contact Directory</a></li>
+                </ul>
+            </div>
+
+            <!-- Contact -->
+            <div>
+                <h3 class="font-semibold mb-4">Contact Us</h3>
+                <p class="text-sm">Ministry of Corporate Affairs, Government of India<br>
+                Shastri Bhawan, New Delhi - 110001</p>
+                <p class="mt-2 text-sm">Email: support@mca.gov.in<br>Phone: +91-11-12345678</p>
+            </div>
+        </div>
+
+        <div class="mt-8 border-t border-gray-700 pt-6 text-center text-xs">
+            <p>&copy; 2024 Ministry of Corporate Affairs (MCA). All Rights Reserved.</p>
+            <p class="mt-2">Disclaimer: This is the official internship portal of the Ministry of Corporate Affairs, Government of India. Unauthorized use is strictly prohibited.</p>
+        </div>
+    </footer>
+    <script>
+        function toggleFAQ(button) {
+            const content = button.nextElementSibling;
+            const expanded = button.getAttribute('aria-expanded') === 'true';
+            button.setAttribute('aria-expanded', !expanded);
+            content.classList.toggle('hidden');
+        }
+    </script>
+</body>
+</html>
