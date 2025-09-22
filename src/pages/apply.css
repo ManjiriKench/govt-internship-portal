@@ -1,0 +1,147 @@
+/* src/components/Apply.css */
+
+/* --- Main Layout & Shared Header/Footer --- */
+
+/* Hero Section */
+.hero-bg {
+    background: #1c322b url('https://placehold.co/1920x1080/1c322b/1c322b?text=') center center/cover;
+    color: #ffffff;
+    padding: 5rem 1.5rem;
+    position: relative;
+}
+.hero-content {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 3rem;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+.hero-text { text-align: left; flex: 1; }
+.hero-text .subtitle { font-size: 1.125rem; font-weight: 300; }
+.hero-text .title { font-size: 2.5rem; font-weight: 700; line-height: 1.2; }
+.hero-text .title span { color: #facc15; }
+.hero-text .description { margin-top: 1rem; color: #e5e7eb; max-width: 500px; }
+.discover-path-link:hover { transform: scale(1.05); }
+.hero-image-container { flex: 0 0 auto; display: flex; justify-content: center; transition: transform 0.5s; }
+.hero-image-container:hover { transform: scale(1.05); }
+.hero-image-container img { border-radius: 0.5rem; box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1), 0 4px 6px -2px rgba(0,0,0,0.05); width: 400px; height: auto; }
+.hero-bg { padding: 4rem 1.5rem; }
+.hero-content { max-width: 1280px; margin: 0 auto; }
+.hero-title { font-size: 1.875rem; font-weight: 700; line-height: 1.2; }
+.hero-subtitle { margin-top: 0.5rem; font-size: 1.125rem; font-weight: 300; }
+
+/* --- Apply Page Specific Layout --- */
+.apply-layout {
+    padding: 3rem 1.5rem;
+    max-width: 1024px;
+    margin: -5rem auto 0 auto;
+    position: relative;
+    z-index: 10;
+    background-color: #fff;
+    border-top-left-radius: 1.5rem;
+    border-top-right-radius: 1.5rem;
+    box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1);
+}
+.back-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: #1c322b;
+    font-weight: 600;
+    margin-bottom: 2rem;
+    transition: color 0.2s;
+}
+.back-link:hover { color: #e49b71; }
+.apply-flow-container { display: flex; flex-direction: column; gap: 2rem; }
+
+/* --- Content Cards --- */
+.content-card { background-color: #f9fafb; border-radius: 0.5rem; box-shadow: 0 2px 4px rgba(0,0,0,0.05); padding: 1.5rem; }
+.content-card h3 { font-size: 1.25rem; font-weight: 700; color: #1c322b; margin-bottom: 0.5rem; }
+.content-card h3.text-center { text-align: center; }
+.content-card .section-subtitle { font-size: 0.875rem; color: #4b5563; margin-bottom: 1.5rem; }
+
+.overview-header { display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem; flex-wrap: wrap; }
+.overview-header img { border-radius: 50%; }
+.internship-title { font-size: 1.875rem; font-weight: 700; color: #1c322b; }
+.internship-org { font-size: 1.125rem; color: #4b5563; font-weight: 600; }
+.verified-badge { margin-left: auto; font-weight: 600; color: #16a34a; display: flex; align-items: center; gap: 0.5rem; }
+
+.details-grid { display: grid; grid-template-columns: 1fr; gap: 1rem; margin-top: 1rem; font-size: 0.875rem; font-weight: 500; color: #374151;}
+.details-grid p { display: flex; align-items: center; gap: 0.5rem; }
+.detail-icon { color: #e49b71; }
+
+.company-description { margin-top: 1.5rem; color: #374151; }
+.responsibilities-title { font-weight: 700; color: #1f2937; margin-top: 1.5rem; margin-bottom: 0.5rem; }
+.responsibilities-list { list-style: none; display: flex; flex-direction: column; gap: 0.5rem; color: #374151; }
+.responsibilities-list li { display: flex; align-items: flex-start; gap: 0.5rem; }
+.responsibilities-list .fa-check-circle { color: #22c55e; margin-top: 4px; }
+
+/* --- Upload & AI Flow --- */
+.upload-area { display: flex; flex-direction: column; align-items: flex-start; gap: 1rem; }
+.upload-button { background-color: #e49b71; color: #fff; padding: 0.75rem 1.5rem; border-radius: 9999px; font-weight: 600; display: inline-flex; align-items: center; gap: 0.5rem; cursor: pointer; transition: background-color 0.2s; }
+.upload-button:hover { background-color: #d38a61; }
+.file-name-display { font-style: italic; color: #4b5563; }
+.upload-note { font-size: 0.75rem; color: #6b7280; margin-top: 0.5rem; }
+
+.loading-indicator { display: flex; flex-direction: column; align-items: center; gap: 0.75rem; margin-top: 1.5rem; }
+.loading-indicator span { font-weight: 600; color: #4b5563; }
+.cool-spinner { width: 1.5rem; height: 1.5rem; border: 4px solid #32CD32; border-top-color: transparent; border-radius: 50%; animation: pulse-spin 1s linear infinite; }
+@keyframes pulse-spin { 0% { transform: rotate(0deg) scale(1); } 50% { transform: rotate(180deg) scale(1.1); } 100% { transform: rotate(360deg) scale(1); } }
+
+.action-container { margin-top: 1.5rem; }
+.action-button { background-color: #1c322b; color: #fff; padding: 0.75rem 1.5rem; border-radius: 9999px; font-weight: 600; border: none; transition: transform 0.2s; }
+.action-button:hover { transform: scale(1.05); }
+.action-button.secondary { background-color: #fff; color: #1c322b; border: 1px solid #1c322b; }
+
+/* --- Score & Skills Section --- */
+.score-display { font-size: 4.5rem; font-weight: 700; color: #e49b71; text-align: center; line-height: 1; }
+.score-display sup { font-size: 1.875rem; }
+.score-subtitle { font-size: 1.125rem; font-weight: 600; color: #4b5563; text-align: center; margin-top: 0.5rem; margin-bottom: 1.5rem; }
+.content-card h4 { font-weight: 700; color: #374151; margin-top: 1.5rem; margin-bottom: 0.5rem; }
+.skills-grid { display: grid; grid-template-columns: 1fr; gap: 1rem; }
+.skill-item { background-color: #fff; border-radius: 0.5rem; padding: 1rem; box-shadow: 0 1px 2px rgba(0,0,0,0.05); display: flex; align-items: center; gap: 0.75rem; font-weight: 600; }
+.skill-item.matched .fa-check-circle { color: #22c55e; }
+.skill-item.to-strengthen .fa-exclamation-triangle { color: #f59e0b; }
+.ai-note { font-style: italic; font-size: 0.875rem; margin-top: 1.5rem; color: #4b5563; }
+
+/* --- Courses & Submit --- */
+.courses-grid { display: grid; grid-template-columns: 1fr; gap: 1.5rem; }
+.course-card { display: block; background: #fff; border-radius: 0.5rem; padding: 1.5rem; box-shadow: 0 2px 4px rgba(0,0,0,0.05); text-align: center; color: inherit; transition: box-shadow 0.2s; text-decoration: none; }
+.course-card:hover { box-shadow: 0 4px 12px rgba(0,0,0,0.1); }
+.course-card .svg-inline--fa { font-size: 2.5rem; color: #e49b71; margin-bottom: 0.75rem; }
+.course-card h4 { font-size: 1.125rem; font-weight: 700; color: #374151; }
+.course-card p { font-size: 0.875rem; color: #4b5563; margin-top: 0.25rem; }
+
+.submit-area { margin-top: 2rem; text-align: center; }
+.submit-button { background-color: #1c322b; color: #fff; padding: 1rem 2rem; border-radius: 9999px; font-weight: 600; font-size: 1.125rem; border: none; box-shadow: 0 4px 6px rgba(0,0,0,0.1); transition: all 0.2s; display: inline-flex; align-items: center; gap: 0.5rem; }
+.submit-button:hover { transform: scale(1.05); box-shadow: 0 10px 15px rgba(0,0,0,0.1); background-color: #2a4d41;}
+.submit-note { margin-top: 0.5rem; font-size: 0.875rem; color: #4b5563; }
+
+/* --- Footer --- */
+.main-footer { background-color: #1c322b; color: #fff; padding: 3rem 1.5rem 1.5rem; margin-top: 3rem; }
+.footer-grid { max-width: 1280px; margin: 0 auto; display: grid; grid-template-columns: 1fr; gap: 2rem; }
+.footer-grid h3 { font-weight: 600; margin-bottom: 1rem; }
+.footer-grid ul { list-style: none; display: flex; flex-direction: column; gap: 0.5rem; }
+.footer-grid p { line-height: 1.6; }
+.footer-grid a:hover { text-decoration: underline; }
+.footer-bottom { border-top: 1px solid #4a5568; margin-top: 2rem; padding-top: 1.5rem; text-align: center; font-size: 0.75rem; }
+
+/* --- Responsive Breakpoints --- */
+@media (min-width: 640px) { /* sm */
+    .upload-area { flex-direction: row; }
+    .details-grid, .skills-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (min-width: 768px) { /* md */
+    .main-nav { padding-left: 3rem; padding-right: 3rem; }
+    .nav-links { display: flex; }
+    .hero-bg, .apply-layout { padding-left: 3rem; padding-right: 3rem; }
+    .hero-title { font-size: 3rem; }
+    .skills-grid, .courses-grid { grid-template-columns: repeat(3, 1fr); }
+    .footer-grid { grid-template-columns: repeat(3, 1fr); }
+}
+@media (min-width: 1024px) { /* lg */
+    .main-nav, .hero-bg, .apply-layout, .footer-grid { padding-left: 6rem; padding-right: 6rem; }
+    .details-grid { grid-template-columns: repeat(4, 1fr); }
+}

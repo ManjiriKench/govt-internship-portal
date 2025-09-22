@@ -1,0 +1,181 @@
+/* src/components/Login.css */
+
+/* Note: Header and Footer styles are repeated from Home.css.
+   For larger apps, you would create shared Header and Footer components. */
+.hero-bg {
+    background: #1c322b url('https://placehold.co/1920x1080/1c322b/1c322b?text=') center center/cover;
+    color: #ffffff;
+    padding: 5rem 1.5rem;
+}
+.hero-content { max-width: 80rem; margin: 0 auto; }
+.hero-text { text-align: left; }
+.hero-text .title { font-size: 1.875rem; font-weight: 700; line-height: 1.2; }
+.hero-text .subtitle { font-size: 1.125rem; font-weight: 300; margin-top: 1rem; }
+
+/* Main Login Content */
+.login-main {
+    padding: 3rem 1.5rem;
+    margin-top: -2.5rem;
+    position: relative;
+    z-index: 10;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.login-container {
+    background-color: #ffffff;
+    border-radius: 0.5rem;
+    box-shadow: 0 20px 25px -5px rgba(0,0,0,0.1), 0 10px 10px -5px rgba(0,0,0,0.04);
+    padding: 2rem;
+    width: 100%;
+    max-width: 28rem; /* max-w-md */
+}
+
+.login-title {
+    font-size: 1.875rem;
+    font-weight: 700;
+    text-align: center;
+    color: #1c322b;
+    margin-bottom: 1.5rem;
+}
+
+.login-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem; /* space-y-6 */
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group label {
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: #374151;
+    margin-bottom: 0.25rem;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 0.5rem 1rem;
+    border: 1px solid #d1d5db;
+    border-radius: 0.375rem;
+    box-shadow: 0 1px 2px 0 rgba(0,0,0,0.05);
+    transition: border-color 0.2s;
+}
+
+.form-group input:hover {
+    border-color: #4ade80; /* hover:border-green-400 */
+}
+
+.form-group input:focus {
+    outline: none;
+    border-color: #22c55e; /* focus:border-green-500 */
+    box-shadow: 0 0 0 2px rgba(34, 197, 94, 0.3); /* focus:ring-green-500 */
+}
+
+.form-options {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 0.875rem;
+}
+
+.remember-me {
+    display: flex;
+    align-items: center;
+}
+
+.remember-me input {
+    height: 1rem;
+    width: 1rem;
+    border-radius: 0.25rem;
+    border-color: #d1d5db;
+    color: #e49b71;
+}
+.remember-me label {
+    margin-left: 0.5rem;
+    color: #111827;
+}
+
+.forgot-password-link {
+    font-weight: 500;
+    color: #e49b71;
+    transition: color 0.2s;
+}
+
+.forgot-password-link:hover {
+    color: #b47a5a;
+}
+
+.submit-button {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 0.75rem 1rem;
+    border: 1px solid transparent;
+    border-radius: 0.375rem;
+    box-shadow: 0 1px 2px 0 rgba(0,0,0,0.05);
+    font-size: 1.125rem;
+    font-weight: 700;
+    color: #ffffff;
+    background-color: #e49b71;
+    transition: background-color 0.2s, transform 0.2s;
+}
+
+.submit-button:hover {
+    background-color: #b47a5a;
+    transform: scale(1.05);
+}
+
+.register-prompt {
+    margin-top: 1.5rem;
+    text-align: center;
+    font-size: 0.875rem;
+}
+.register-link {
+    font-weight: 500;
+    color: #e49b71;
+    transition: color 0.2s;
+}
+.register-link:hover {
+    color: #b47a5a;
+}
+.message-box {
+    margin-top: 1rem;
+    padding: 1rem;
+    border-radius: 0.375rem;
+    background-color: #dcfce7; /* bg-green-100 */
+    color: #166534; /* text-green-700 */
+    border: 1px solid #86efac; /* border-green-300 */
+    text-align: center;
+}
+
+/* Footer (Same as Home) */
+.main-footer { background-color: #1c322b; color: #ffffff; padding: 3rem 0 1.5rem; margin-top: 3rem; }
+.footer-grid { max-width: 80rem; margin: 0 auto; display: grid; grid-template-columns: 1fr; gap: 2rem; padding: 0 1.5rem; }
+.footer-grid h3 { font-weight: 600; margin-bottom: 1rem; }
+.footer-grid ul { list-style: none; line-height: 1.75; font-size: 0.875rem; }
+.footer-grid a { color: #ffffff; }
+.footer-grid a:hover { text-decoration: underline; }
+.footer-contact p { font-size: 0.875rem; }
+.footer-bottom { margin-top: 2rem; border-top: 1px solid #4a5568; padding-top: 1.5rem; text-align: center; font-size: 0.75rem; }
+
+
+@media (min-width: 768px) {
+    .main-nav { padding: 1rem 3rem; }
+    .nav-links { display: flex; }
+    .header-title { font-size: 1.5rem; }
+    .org-login-btn { display: block; }
+    .hero-bg { padding: 7rem 3rem; }
+    .hero-text .title { font-size: 3rem; }
+    .login-main { margin-top: -5rem; }
+    .footer-grid { grid-template-columns: repeat(3, 1fr); }
+}
+
+@media (min-width: 1024px) {
+    .main-nav, .hero-bg { padding-left: 6rem; padding-right: 6rem; }
+}

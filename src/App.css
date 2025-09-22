@@ -1,0 +1,24 @@
+/* src/App.css */
+
+/* Import the Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+/* Basic CSS Reset and Global Styles */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #f3f4f6; /* Default page background */
+    color: #374151; /* Default text color */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+a, button {
+    cursor: pointer;
+    text-decoration: none;
+}
