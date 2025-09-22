@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .hero-bg {
+            background-color: #1c322b;
+            background-image: url('https://placehold.co/1920x1080/1c322b/1c322b?text=');
+            background-size: cover;
+            background-position: center;
+        }
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 100;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0,0,0,0.4);
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
+</head>
+<body class="bg-gray-100">
+
+    <!-- Tricolor Top Ribbon -->
+    <div class="h-1.5 flex w-full">
+        <div class="bg-orange-500 w-1/3"></div>
+        <div class="bg-white w-1/3"></div>
+        <div class="bg-green-500 w-1/3"></div>
+    </div>
+
+    <!-- Header Section -->
+    <header class="bg-[#1c322b] text-white shadow-lg">
+        <!-- Top Bar -->
+        <div class="bg-[#10201b] text-center py-1 text-xs md:text-sm">
+            <p>Government of India | Ministry of Corporate Affairs (MoCA)</p>
+        </div>
+
+        <!-- Top Navigation Bar -->
+        <nav class="flex items-center justify-between py-4 px-6 md:px-12 lg:px-24 border-b border-gray-700">
+            <div class="flex items-center space-x-4">
+                <img src="mca.jpeg" alt="Government of India Logo" class="h-10 w-auto">
+                <div class="hidden md:flex space-x-4">
+                    <a href="index.html" class="hover:text-gray-300 transition duration-200">Dashboard</a>
+                    <a href="faq.html" class="hover:text-gray-300 transition duration-200">FAQ</a>
+                    <a href="about.html" class="hover:text-gray-300 transition duration-200">About MoCA</a>
+                    <a href="disclaimer.html" class="hover:text-gray-300 transition duration-200">Disclaimer</a>
+                </div>
+            </div>
+            <h1 class="text-xl md:text-2xl font-bold uppercase tracking-wider">AI - GOV. INTERNSHIP SCHEME</h1>
+            <div class="flex items-center space-x-4">
+            <a 
+                href="slogin.html" 
+                class="bg-white text-[#1c322b] px-4 py-2 rounded font-semibold text-sm transition-transform duration-300 hover:scale-105"
+            >Student Login</a>
+            <a 
+                href="slogin.html" 
+                class="bg-white text-[#1c322b] px-4 py-2 rounded font-semibold text-sm transition-transform duration-300 hover:scale-105"
+            >Student Login</a>
+            <a 
+                href="admin.html" 
+                class="bg-[#e49b71] text-white px-4 py-2 rounded font-semibold text-sm transition-transform duration-300 hover:scale-105 border-2 border-[#e49b71]"
+            >ADMIN</a>
+            </div>
+        </nav>
+        
+        <!-- Welcome Section -->
+        <div class="hero-bg text-white py-16 md:py-24 px-6 md:px-12 lg:px-24 relative z-0">
+            <div class="flex flex-col md:flex-row items-center justify-between md:space-x-8">
+                <div class="text-left w-full">
+                    <h2 class="text-3xl md:text-5xl font-bold leading-tight">Admin Dashboard</h2>
+                    <p class="text-lg md:text-xl font-light mt-2">Manage and monitor the entire portal.</p>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content for Admin Dashboard -->
+    <main class="py-12 px-6 md:px-12 lg:px-24 -mt-10 md:-mt-20 rounded-t-3xl shadow-lg relative z-10 bg-white">
+        <div class="flex flex-col lg:flex-row space-y-8 lg:space-y-0 lg:space-x-8">
+            <!-- Sidebar Navigation -->
+            <aside class="w-full lg:w-64 bg-gray-50 rounded-lg shadow-md p-6">
+                <nav>
+                    <ul class="space-y-4 font-semibold text-gray-700">
+                        <li><a href="#" class="block hover:text-[#e49b71] transition-colors duration-200" onclick="showSection('dashboard')"><i class="fas fa-chart-line mr-2"></i> Dashboard</a></li>
+                        <li><a href="#" class="block hover:text-[#e49b71] transition-colors duration-200" onclick="showSection('organizations')"><i class="fas fa-building mr-2"></i> Organizations</a></li>
+                        <li><a href="#" class="block hover:text-[#e49b71] transition-colors duration-200" onclick="showSection('students')"><i class="fas fa-user-graduate mr-2"></i> Students</a></li>
+                        <li><a href="#" class="block hover:text-[#e49b71] transition-colors duration-200" onclick="showSection('internships')"><i class="fas fa-briefcase mr-2"></i> Internships</a></li>
+                        <li><a href="#" class="block hover:text-[#e49b71] transition-colors duration-200" onclick="showSection('analytics')"><i class="fas fa-chart-bar mr-2"></i> Analytics</a></li>
+                        <li><a href="#" class="block hover:text-[#e49b71] transition-colors duration-200" onclick="showSection('settings')"><i class="fas fa-cogs mr-2"></i> Settings</a></li>
+                    </ul>
+                </nav>
+            </aside>
+
+            <!-- Main Dashboard Content -->
+            <div class="flex-1 space-y-8">
+                <!-- Dashboard Overview -->
+                <section id="dashboard" class="dashboard-section bg-gray-50 rounded-lg shadow-md p-6">
+                    <h2 class="text-2xl font-bold text-[#1c322b] mb-6">Dashboard Overview</h2>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                        <!-- Stat Card 1 -->
+                        <div class="bg-white rounded-lg p-6 shadow-sm text-center">
+                            <h3 class="text-4xl font-bold text-[#e49b71]" id="registered-students">1,245</h3>
+                            <p class="text-gray-600 mt-2">Registered Students</p>
+                        </div>
+                        <!-- Stat Card 2 -->
+                        <div class="bg-white rounded-lg p-6 shadow-sm text-center">
+                            <h3 class="text-4xl font-bold text-[#32CD32]" id="active-internships">48</h3>
+                            <p class="text-gray-600 mt-2">Active Internships</p>
+                        </div>
+                        <!-- Stat Card 3 -->
+                        <div class="bg-white rounded-lg p-6 shadow-sm text-center">
+                            <h3 class="text-4xl font-bold text-blue-500" id="pending-approvals">12</h3>
+                            <p class="text-gray-600 mt-2">Pending Approvals</p>
+                        </div>
+                        <!-- Stat Card 4 -->
+                        <div class="bg-white rounded-lg p-6 shadow-sm text-center">
+                            <h3 class="text-4xl font-bold text-purple-500" id="total-applications">3,450</h3>
+                            <p class="text-gray-600 mt-2">Total Applications</p>
+                        </div>
+                    </div>
+                    <div class="mt-8">
+                        <h3 class="text-xl font-bold text-[#1c322b] mb-4">Quick Notifications</h3>
+                        <div class="bg-white rounded-lg p-4 shadow-sm space-y-2 text-gray-700">
+                            <p class="flex items-center"><i class="fas fa-exclamation-triangle text-red-500 mr-2"></i> <strong>Urgent:</strong> 5 new organizations pending approval.</p>
+                            <p class="flex items-center"><i class="fas fa-check-circle text-green-500 mr-2"></i> <strong>Info:</strong> Student profile update complete.</p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Organization Verification & Approvals -->
+                <section id="organizations" class="dashboard-section bg-gray-50 rounded-lg shadow-md p-6 hidden">
+                    <h2 class="text-2xl font-bold text-[#1c322b] mb-6">Organization Verification</h2>
+                    <div class="overflow-x-auto">
+                        <table class="min-w-full bg-white rounded-lg shadow-md">
+                            <thead>
+                                <tr class="bg-gray-200 text-left text-gray-600 uppercase text-sm leading-normal">
+                                    <th class="py-3 px-6">Organization</th>
+                                    <th class="py-3 px-6">Registration No.</th>
+                                    <th class="py-3 px-6">Type</th>
+                                    <th class="py-3 px-6">Status</th>
+                                    <th class="py-3 px-6">Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody class="text-gray-600 text-sm font-light" id="org-table-body">
+                                <!-- Organization data will be rendered here by JS -->
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+
+                <!-- Student Monitoring Section -->
+                <section id="students" class="dashboard-section bg-gray-50 rounded-lg shadow-md p-6 hidden">
+                    <h2 class="text-2xl font-bold text-[#1c322b] mb-6">Student Monitoring</h2>
+                    <div class="flex items-center space-x-4 mb-4">
+                        <input type="text" id="student-search" onkeyup="searchStudents()" placeholder="Search students..." class="px-4 py-2 border rounded-full w-full">
+                    </div>
+                    <div class="overflow-x-auto">
+                        <table class="min-w-full bg-white rounded-lg shadow-md">
+                            <thead>
+                                <tr class="bg-gray-200 text-left text-gray-600 uppercase text-sm leading-normal">
+                                    <th class="py-3 px-6">Student Name</th>
+                                    <th class="py-3 px-6">Skills</th>
+                                    <th class="py-3 px-6">Applied Internships</th>
+                                    <th class="py-3 px-6">Status</th>
+                                </tr>
+                            </thead>
+                            <tbody id="student-table-body" class="text-gray-600 text-sm font-light">
+                                <!-- Student data will be rendered here by JS -->
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+                
+                <!-- Internship Oversight Section -->
+                <section id="internships" class="dashboard-section bg-gray-50 rounded-lg shadow-md p-6 hidden">
+                    <h2 class="text-2xl font-bold text-[#1c322b] mb-6">Internship Oversight</h2>
+                    <div class="overflow-x-auto">
+                        <table class="min-w-full bg-white rounded-lg shadow-md">
+                            <thead>
+                                <tr class="bg-gray-200 text-left text-gray-600 uppercase text-sm leading-normal">
+                                    <th class="py-3 px-6">Internship Title</th>
+                                    <th class="py-3 px-6">Applicants</th>
+                                    <th class="py-3 px-6">Status</th>
+                                    <th class="py-3 px-6">Insights</th>
+                                </tr>
+                            </thead>
+                            <tbody class="text-gray-600 text-sm font-light">
+                                <tr class="border-b border-gray-200 hover:bg-gray-100">
+                                    <td class="py-3 px-6">Data Scientist Intern</td>
+                                    <td class="py-3 px-6">50</td>
+                                    <td class="py-3 px-6"><span class="bg-green-200 text-green-600 py-1 px-3 rounded-full text-xs">Active</span></td>
+                                    <td class="py-3 px-6">Top applicants: Jane Doe, ...</td>
+                                </tr>
+                                <tr class="border-b border-gray-200 hover:bg-gray-100">
+                                    <td class="py-3 px-6">Frontend Developer Intern</td>
+                                    <td class="py-3 px-6">85</td>
+                                    <td class="py-3 px-6"><span class="bg-red-200 text-red-600 py-1 px-3 rounded-full text-xs">Closed</span></td>
+                                    <td class="py-3 px-6">Avg. match score: 85%</td>
+                                </tr>
+                                <tr class="border-b border-gray-200 hover:bg-gray-100">
+                                    <td class="py-3 px-6">AI/ML Engineer</td>
+                                    <td class="py-3 px-6">120</td>
+                                    <td class="py-3 px-6"><span class="bg-green-200 text-green-600 py-1 px-3 rounded-full text-xs">Active</span></td>
+                                    <td class="py-3 px-6">Top applicants: Rahul Sharma, ...</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+
+                <!-- AI Analytics & Reports Section -->
+                <section id="analytics" class="dashboard-section bg-gray-50 rounded-lg shadow-md p-6 hidden">
+                    <h2 class="text-2xl font-bold text-[#1c322b] mb-6">AI Analytics & Reports</h2>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div class="bg-white rounded-lg p-6 shadow-sm">
+                            <h3 class="text-xl font-semibold mb-4">Heatmap of Skill Demand vs. Student Supply</h3>
+                            <div class="w-full h-48 bg-gray-200 rounded-md flex items-center justify-center">
+                                <p class="text-gray-500">Visualization Placeholder</p>
+                            </div>
+                            <p class="text-sm text-gray-500 mt-2">Insights on trending skills and supply gaps.</p>
+                        </div>
+                        <div class="bg-white rounded-lg p-6 shadow-sm">
+                            <h3 class="text-xl font-semibold mb-4">Location-wise Internship Allocation</h3>
+                            <div class="w-full h-48 bg-gray-200 rounded-md flex items-center justify-center">
+                                <p class="text-gray-500">Pie Chart Placeholder</p>
+                            </div>
+                            <p class="text-sm text-gray-500 mt-2">Breakdown of internship distribution by region.</p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Settings & Controls Section -->
+                <section id="settings" class="dashboard-section bg-gray-50 rounded-lg shadow-md p-6 hidden">
+                    <h2 class="text-2xl font-bold text-[#1c322b] mb-6">Settings & Controls</h2>
+                    <div class="space-y-6">
+                        <div class="p-4 bg-white rounded-lg shadow-sm">
+                            <h3 class="font-semibold text-lg text-gray-800">Manage Admin Accounts & Roles</h3>
+                            <p class="text-gray-600 text-sm mt-1">Control access levels and permissions for administrators. Grant or revoke roles such as 'Super Admin', 'Content Editor', or 'Verification Manager'.</p>
+                        </div>
+                        <div class="p-4 bg-white rounded-lg shadow-sm">
+                            <h3 class="font-semibold text-lg text-gray-800">Global System Settings</h3>
+                            <p class="text-gray-600 text-sm mt-1">Adjust core platform rules. This includes setting global internship posting guidelines and controlling the AI threshold values for student-internship match scores.</p>
+                        </div>
+                        <div class="p-4 bg-white rounded-lg shadow-sm">
+                            <h3 class="font-semibold text-lg text-gray-800">Database Maintenance</h3>
+                            <p class="text-gray-600 text-sm mt-1">Manage updates to the course recommendation database and other core data sets.</p>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </main>
+
+    <!-- Student Detail Modal -->
+    <div id="studentModal" class="modal">
+        <div class="bg-white p-8 rounded-lg shadow-xl w-11/12 md:w-1/2 lg:w-1/3">
+            <div class="flex justify-between items-center mb-4">
+                <h3 class="text-2xl font-bold text-[#1c322b]">Student Details</h3>
+                <button class="text-gray-500 hover:text-gray-800 text-2xl" onclick="closeModal()">&times;</button>
+            </div>
+            <div id="modal-content">
+                <!-- Content populated by JS -->
+            </div>
+        </div>
+    </div>
+
+         <!-- Footer Section -->
+    <footer class="bg-[#1c322b] text-white py-12 mt-12">
+        <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 px-6 md:px-12">
+            <!-- Quick Links -->
+            <div>
+                <h3 class="font-semibold mb-4">Quick Links</h3>
+                <ul class="space-y-2 text-sm">
+                    <li><a href="#" class="hover:underline">Home</a></li>
+                    <li><a href="#" class="hover:underline">About MCA</a></li>
+                    <li><a href="#" class="hover:underline">Internship Policy</a></li>
+                    <li><a href="#" class="hover:underline">FAQ</a></li>
+                </ul>
+            </div>
+
+            <!-- Resources -->
+            <div>
+                <h3 class="font-semibold mb-4">Resources</h3>
+                <ul class="space-y-2 text-sm">
+                    <li><a href="#" class="hover:underline">Reports & Publications</a></li>
+                    <li><a href="#" class="hover:underline">Circulars & Notifications</a></li>
+                    <li><a href="#" class="hover:underline">Contact Directory</a></li>
+                </ul>
+            </div>
+
+            <!-- Contact -->
+            <div>
+                <h3 class="font-semibold mb-4">Contact Us</h3>
+                <p class="text-sm">Ministry of Corporate Affairs, Government of India<br>
+                Shastri Bhawan, New Delhi - 110001</p>
+                <p class="mt-2 text-sm">Email: support@mca.gov.in<br>Phone: +91-11-12345678</p>
+            </div>
+        </div>
+
+        <div class="mt-8 border-t border-gray-700 pt-6 text-center text-xs">
+            <p>&copy; 2024 Ministry of Corporate Affairs (MCA). All Rights Reserved.</p>
+            <p class="mt-2">Disclaimer: This is the official internship portal of the Ministry of Corporate Affairs, Government of India. Unauthorized use is strictly prohibited.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Mock data for students
+        const studentsData = [
+            { name: 'Jane Doe', skills: 'Python, SQL, ML', internships: 'Data Scientist Intern', status: 'Pending', email: 'jane.doe@example.com', phone: '9876543210' },
+            { name: 'John Smith', skills: 'HTML, CSS, JS', internships: 'Frontend Developer Intern', status: 'Shortlisted', email: 'john.smith@example.com', phone: '9123456780' },
+            { name: 'Rahul Sharma', skills: 'AI/ML, Data Structures', internships: 'AI/ML Engineer', status: 'Pending', email: 'rahul.s@example.com', phone: '9988776655' },
+            { name: 'Priya Patel', skills: 'Graphic Design, Figma', internships: 'UI/UX Designer', status: 'Selected', email: 'priya.p@example.com', phone: '9234567890' },
+            { name: 'Amit Singh', skills: 'Java, Spring Boot', internships: 'Backend Developer', status: 'Shortlisted', email: 'amit.s@example.com', phone: '9009988776' },
+            { name: 'Sana Khan', skills: 'Cybersecurity, Network Management', internships: 'Cybersecurity Analyst', status: 'Pending', email: 'sana.k@example.com', phone: '9554433221' },
+            { name: 'Varun Das', skills: 'Digital Marketing, SEO', internships: 'Marketing Specialist', status: 'Shortlisted', email: 'varun.d@example.com', phone: '9445566778' },
+            { name: 'Meera Reddy', skills: 'Content Writing, Editing', internships: 'Technical Writer', status: 'Selected', email: 'meera.r@example.com', phone: '9334455667' },
+        ];
+
+        // Mock data for organizations
+        let orgsData = [
+            { name: 'Digital India Corp.', regNo: 'DIC-12345', type: 'Govt. Entity', status: 'Pending' },
+            { name: 'TCS', regNo: 'TCS-98765', type: 'MNC', status: 'Verified' },
+            { name: 'StartupX', regNo: 'SX-11223', type: 'Startup', status: 'Pending' },
+            { name: 'Innovate Solutions', regNo: 'IS-45678', type: 'Startup', status: 'Pending' },
+            { name: 'Ministry of Finance', regNo: 'MoF-11111', type: 'Govt. Entity', status: 'Verified' },
+            { name: 'TechCorp India', regNo: 'TCI-22334', type: 'MNC', status: 'Pending' },
+        ];
+
+        // This function shows the selected section and hides the others
+        function showSection(sectionId) {
+            const sections = document.querySelectorAll('.dashboard-section');
+            sections.forEach(section => {
+                section.classList.add('hidden');
+            });
+            const selectedSection = document.getElementById(sectionId);
+            if (selectedSection) {
+                selectedSection.classList.remove('hidden');
+            }
+            if (sectionId === 'organizations') {
+                renderOrgs();
+            } else if (sectionId === 'students') {
+                renderStudents(studentsData);
+            }
+        }
+        
+        // This function simulates data updates
+        function updateStats() {
+            const registeredStudents = document.getElementById('registered-students');
+            const activeInternships = document.getElementById('active-internships');
+            const pendingApprovals = document.getElementById('pending-approvals');
+            const totalApplications = document.getElementById('total-applications');
+
+            registeredStudents.textContent = Math.floor(Math.random() * (1500 - 1000 + 1) + 1000).toLocaleString();
+            activeInternships.textContent = Math.floor(Math.random() * (60 - 40 + 1) + 40);
+            pendingApprovals.textContent = orgsData.filter(org => org.status === 'Pending').length;
+            totalApplications.textContent = Math.floor(Math.random() * (4000 - 3000 + 1) + 3000).toLocaleString();
+        }
+
+        // Renders organization data into the table
+        function renderOrgs() {
+            const tbody = document.getElementById('org-table-body');
+            tbody.innerHTML = ''; // Clear existing content
+            orgsData.forEach((org, index) => {
+                const row = document.createElement('tr');
+                row.className = 'border-b border-gray-200 hover:bg-gray-100';
+                
+                let statusClass = '';
+                let statusText = org.status;
+                let actionsHTML = '';
+                if (org.status === 'Pending') {
+                    statusClass = 'bg-yellow-200 text-yellow-600';
+                    actionsHTML = `
+                        <button class="bg-green-500 text-white py-1 px-3 rounded-full text-xs hover:bg-green-600" onclick="handleApproval(${index}, 'approve')">Approve</button>
+                        <button class="bg-red-500 text-white py-1 px-3 rounded-full text-xs ml-2 hover:bg-red-600" onclick="handleApproval(${index}, 'reject')">Reject</button>
+                    `;
+                } else if (org.status === 'Verified') {
+                    statusClass = 'bg-green-200 text-green-600';
+                    actionsHTML = '';
+                } else if (org.status === 'Rejected') {
+                    statusClass = 'bg-red-200 text-red-600';
+                    actionsHTML = '';
+                }
+
+                row.innerHTML = `
+                    <td class="py-3 px-6">${org.name}</td>
+                    <td class="py-3 px-6">${org.regNo}</td>
+                    <td class="py-3 px-6">${org.type}</td>
+                    <td class="py-3 px-6"><span class="${statusClass} py-1 px-3 rounded-full text-xs">${statusText}</span></td>
+                    <td class="py-3 px-6">${actionsHTML}</td>
+                `;
+                tbody.appendChild(row);
+            });
+        }
+
+        // Renders student data into the table
+        function renderStudents(data) {
+            const tbody = document.getElementById('student-table-body');
+            tbody.innerHTML = ''; // Clear existing content
+            data.forEach(student => {
+                const row = document.createElement('tr');
+                row.className = 'border-b border-gray-200 hover:bg-gray-100 cursor-pointer';
+                row.setAttribute('onclick', `showStudentDetails('${student.name}')`);
+                
+                let statusClass = '';
+                if (student.status === 'Pending') {
+                    statusClass = 'bg-purple-200 text-purple-600';
+                } else if (student.status === 'Shortlisted') {
+                    statusClass = 'bg-green-200 text-green-600';
+                } else if (student.status === 'Selected') {
+                    statusClass = 'bg-blue-200 text-blue-600';
+                }
+
+                row.innerHTML = `
+                    <td class="py-3 px-6">${student.name}</td>
+                    <td class="py-3 px-6">${student.skills}</td>
+                    <td class="py-3 px-6">${student.internships}</td>
+                    <td class="py-3 px-6"><span class="${statusClass} py-1 px-3 rounded-full text-xs">${student.status}</span></td>
+                `;
+                tbody.appendChild(row);
+            });
+        }
+        
+        // Handles the search input for students
+        function searchStudents() {
+            const query = document.getElementById('student-search').value.toLowerCase();
+            const filteredStudents = studentsData.filter(student =>
+                student.name.toLowerCase().includes(query)
+            );
+            renderStudents(filteredStudents);
+        }
+
+        // This function handles the approval/rejection process for organizations
+        function handleApproval(index, action) {
+            const org = orgsData[index];
+            const newStatus = action === 'approve' ? 'Verified' : 'Rejected';
+            
+            orgsData[index].status = newStatus;
+            
+            // Re-render the organizations table to reflect the change
+            renderOrgs();
+            // Update the dashboard stats
+            updateStats();
+        }
+
+        function showStudentDetails(studentName) {
+            const student = studentsData.find(s => s.name === studentName);
+            const modal = document.getElementById('studentModal');
+            const modalContent = document.getElementById('modal-content');
+            
+            if (student) {
+                modalContent.innerHTML = `
+                    <p class="text-sm font-bold text-gray-800">Name:</p>
+                    <p class="text-gray-600 mb-2">${student.name}</p>
+                    <p class="text-sm font-bold text-gray-800">Email:</p>
+                    <p class="text-gray-600 mb-2">${student.email}</p>
+                    <p class="text-sm font-bold text-gray-800">Phone:</p>
+                    <p class="text-gray-600 mb-2">${student.phone}</p>
+                    <p class="text-sm font-bold text-gray-800">Skills:</p>
+                    <p class="text-gray-600 mb-2">${student.skills}</p>
+                    <p class="text-sm font-bold text-gray-800">Status:</p>
+                    <p class="text-gray-600 mb-2">${student.status}</p>
+                `;
+                modal.style.display = 'flex';
+            }
+        }
+        
+        function closeModal() {
+            const modal = document.getElementById('studentModal');
+            modal.style.display = 'none';
+        }
+
+        // Update stats every 5 seconds
+        setInterval(updateStats, 5000);
+
+        // Initial setup
+        window.onload = function() {
+            showSection('dashboard');
+            updateStats();
+        };
+    </script>
+</body>
+</html>
