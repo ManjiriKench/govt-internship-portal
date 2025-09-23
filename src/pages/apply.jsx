@@ -12,7 +12,8 @@ import {
     faExclamationTriangle, faPaperPlane, faCode, faChartLine, faDatabase
 } from '@fortawesome/free-solid-svg-icons';
 import { faRupeeSign } from '@fortawesome/free-solid-svg-icons';
-import Navbar from "./navbar.jsx"; // Specific import for rupee
+import Navbar from "./navbar.jsx";
+import Footer from "./footer.jsx"; // Specific import for rupee
 
 
 // In a real app, you'd fetch this data based on the ID.
@@ -67,14 +68,12 @@ function Apply() {
 
     return (
         <div className="page-container">
-            <div className="tricolor-ribbon"><div></div><div></div><div></div></div>
             <header className="main-header">
-                <div className="top-bar"><p>Government of India | Ministry of Corporate Affairs (MoCA)</p></div>
                 <Navbar />
-                <div className="hero-bg">
-                    <div className="hero-content">
-                        <h2 className="hero-title">Apply for Internship</h2>
-                        <p className="hero-subtitle">Complete your application and submit it with confidence.</p>
+                <div className="apply-hero-bg">
+                    <div className="apply-hero-content">
+                        <h2 className="apply-hero-title">Apply for Internship</h2>
+                        <p className="apply-hero-subtitle">Complete your application and submit it with confidence.</p>
                     </div>
                 </div>
             </header>
@@ -107,11 +106,11 @@ function Apply() {
                         </p>
                         <h4 className="responsibilities-title">Key Skills & Responsibilities</h4>
                         <ul className="responsibilities-list">
-                            <li><FontAwesomeIcon icon={faCheckCircle} /> Develop predictive models and machine learning algorithms using Python.</li>
-                            <li><FontAwesomeIcon icon={faCheckCircle} /> Perform data cleaning, analysis, and visualization using Pandas.</li>
-                            <li><FontAwesomeIcon icon={faCheckCircle} /> Manage and query large datasets using SQL to support data-driven decision-making.</li>
-                            <li><FontAwesomeIcon icon={faCheckCircle} /> Apply advanced statistical methods and models to solve complex problems.</li>
-                            <li><FontAwesomeIcon icon={faCheckCircle} /> Collaborate with a team to build robust data pipelines and productionize models.</li>
+                            <li><FontAwesomeIcon style={{ color: '#26cf64' }} icon={faCheckCircle} /> Develop predictive models and machine learning algorithms using Python.</li>
+                            <li><FontAwesomeIcon style={{ color: '#26cf64' }} icon={faCheckCircle} /> Perform data cleaning, analysis, and visualization using Pandas.</li>
+                            <li><FontAwesomeIcon style={{ color: '#26cf64' }} icon={faCheckCircle} /> Manage and query large datasets using SQL to support data-driven decision-making.</li>
+                            <li><FontAwesomeIcon style={{ color: '#26cf64' }} icon={faCheckCircle} /> Apply advanced statistical methods and models to solve complex problems.</li>
+                            <li><FontAwesomeIcon style={{ color: '#26cf64' }} icon={faCheckCircle} /> Collaborate with a team to build robust data pipelines and productionize models.</li>
                         </ul>
                     </section>
 
@@ -179,16 +178,7 @@ function Apply() {
                 </div>
             </main>
 
-            <footer className="main-footer">
-                <div className="footer-grid">
-                    <div><h3>Quick Links</h3><ul><li><a href="#">Home</a></li><li><a href="#">About MCA</a></li></ul></div>
-                    <div><h3>Resources</h3><ul><li><a href="#">Reports</a></li><li><a href="#">Circulars</a></li></ul></div>
-                    <div><h3>Contact Us</h3><p>Ministry of Corporate Affairs, Government of India<br/>New Delhi - 110001</p></div>
-                </div>
-                <div className="footer-bottom">
-                    <p>&copy; 2024 Ministry of Corporate Affairs (MCA). All Rights Reserved.</p>
-                </div>
-            </footer>
+            <Footer/>
         </div>
     );
 }

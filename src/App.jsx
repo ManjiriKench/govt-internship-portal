@@ -7,6 +7,9 @@ import Apply from './pages/apply.jsx';
 import Disclaimer from './pages/disclaimer.jsx';
 import Faq from './pages/faq.jsx'
 import './App.css';
+import OrganizationLogin from "./pages/organization_login.jsx";
+import OrganizationRegister from "./pages/organization_register.jsx";
+import OrganizationDashboard from "./pages/organization_dashboard.jsx";
 
 function App() {
     return (
@@ -18,6 +21,9 @@ function App() {
             <Route path="/apply/:internshipId" element={<Apply />} /> {/* 2. Add the new dynamic route */}
             <Route path="/disclaimer" element={<Disclaimer />} />
             <Route path="/faq" element={<Faq />} />
+            <Route path="/organization-login" element={<OrganizationLogin />} />
+            <Route path="/organization-register" element={<OrganizationRegister />} />
+            <Route path="/organization-dashboard" element={<OrganizationDashboard />} />
         </Routes>
     );
 }

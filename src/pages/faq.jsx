@@ -4,7 +4,8 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import './faq.css';
 import FaqItem from './FaqItem';
-import Navbar from "./navbar.jsx"; // Import the reusable item component
+import Navbar from "./navbar.jsx";
+import Footer from "./footer.jsx"; // Import the reusable item component
 
 const studentFaqs = [
     { id: 's1', question: 'Who can apply for internships?', answer: 'Any registered student from recognized colleges/universities in India.' },
@@ -38,12 +39,13 @@ function Faq() {
         <div className="page-container">
             <header className="main-header">
                 <Navbar />
-                <div className="hero-bg">
-                    <div className="hero-content">
-                        <h2 className="hero-title">Frequently Asked Questions</h2>
-                        <p className="hero-subtitle">Find answers to common questions about our AI-powered internship portal.</p>
+                <div className="faq-hero-bg">
+                    <div className="faq-hero-content">
+                        <h2 className="faq-hero-title">Frequently Asked Questions</h2>
+                        <p className="faq-hero-subtitle">Find answers to common questions about our AI-powered internship portal.</p>
                     </div>
                 </div>
+
             </header>
 
             <main className="faq-layout">
@@ -92,12 +94,7 @@ function Faq() {
                 </div>
             </main>
 
-            <footer className="main-footer">
-                {/* Full footer can be added here if needed */}
-                <div className="footer-bottom">
-                    <p>&copy; 2024 Ministry of Corporate Affairs (MCA). All Rights Reserved.</p>
-                </div>
-            </footer>
+            <Footer/>
         </div>
     );
 }

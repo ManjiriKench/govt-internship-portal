@@ -8,6 +8,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPencilAlt, faUserCircle, faEnvelope, faFilePdf, faStar } from '@fortawesome/free-solid-svg-icons';
 import { faGithub } from '@fortawesome/free-brands-svg-icons';
 import Navbar from "./navbar.jsx";
+import Footer from "./footer.jsx";
 
 // --- Data (In a real app, this would come from an API) ---
 const profileData = {
@@ -23,9 +24,12 @@ const internshipData = [
     { id: 2, title: "Frontend Developer Intern", organization: "Ministry of Technology", skills: ["HTML", "CSS", "JavaScript", "React"], logoText: "MIN", url: "/apply/2" },
     { id: 3, title: "Backend Developer Intern", organization: "Government of Maharashtra", skills: ["Python", "Django", "SQL", "APIs"], logoText: "GOV", url: "/apply/3" },
     { id: 4, title: "AI Research Intern", organization: "National Informatics Centre", skills: ["Python", "Deep Learning", "NLP"], logoText: "NIC", url: "/apply/4" },
+    { id: 5, title: "Full Stack Developer Intern", organization: "Government of Maharashtra", skills: ["Python", "HTML", "JavaScript", "React", "Node.js", "MongoDS"], logoText: "TECH", url: "/apply/5" },
+    { id: 6, title: "Cloud Engineer Intern", organization: "Quantum Labs", skills: ["AWS", "Docker", "Linux", "Kubernetes"], logoText: "QL", url: "/apply/6" },
+    { id: 7, title: "DevOps Intern", organization: "Innovate India Foundation", skills: ["Python", "Deep Learning","NLP", "Mathematics"], logoText: "NIC", url: "/apply/7" },
 ];
-const skillTypes = ["Python", "Machine Learning", "SQL", "React", "JavaScript", "Django", "APIs", "Docker", "AWS", "Linux"];
-const dailyTips = [ { title: "Resume Power-Up", content: "Customize your resume for each application to highlight relevant skills." }];
+const skillTypes = ["Python", "Machine Learning", "SQL", "React", "JavaScript", "Django", "APIs", "Docker", "AWS", "Linux", "Node.js", "MongoDB", "CI/CD", "Cloud", "Deep Learning", "NLP", "Pytorch", "Excel", "Data Visualization", "Mathematics", "HTML", "CSS", "Networking", "Java"];
+const dailyTips = [ { title: "The Lifelong Learner", content: "The tech world moves fast. Stay updated on the latest trends and technologies to keep your skills sharp." }];
 
 function Dashboard() {
     const [filteredInternships, setFilteredInternships] = useState([]);
@@ -56,15 +60,16 @@ function Dashboard() {
 
     return (
         <div className="page-container">
-            <div className="tricolor-ribbon"><div></div><div></div><div></div></div>
-
             <header className="main-header">
+
                 <Navbar />
 
-                <div className="hero-bg">
-                    <div className="hero-content">
-                        <h2 className="hero-title">Welcome back, Manjiri!</h2>
-                        <p className="hero-subtitle">Here’s your personalized AI-powered internship feed based on your skills and profile.</p>
+                <div className="dashboard-bg">
+                    <div className="dashboard-wrapper">
+                        <h2 className="dashboard-title">Welcome back, Manjiri!</h2>
+                        <p className="dashboard-subtitle">
+                            Here’s your personalized AI-powered internship feed based on your skills and profile.
+                        </p>
                         <div className="progress-wrapper">
                             <div className="progress-info">
                                 <span>Your Application Journey: 65% Completed</span>
@@ -81,6 +86,7 @@ function Dashboard() {
                         </div>
                     </div>
                 </div>
+
             </header>
 
             <main className="dashboard-layout">
@@ -138,14 +144,14 @@ function Dashboard() {
                                     <img src={`https://placehold.co/60x60/333/FFFFFF?text=${internship.logoText}`} alt="Logo" className="item-logo"/>
                                     <div className="item-details">
                                         <h4 className="item-title">{internship.title}</h4>
-                                        <p className="item-org">{internship.organization} <span className="verified-badge">✅ Verified</span></p>
+                                        <p className="item-org">{internship.organization}  <span className="verified-badge" style={{ display: 'inline', marginLeft: '15px',  fontSize: '0.8rem'}}>✅ Verified</span></p>
                                         <div className="skills-tags-container small">
                                             {internship.skills.map(skill => <span key={skill} className="skill-tag-sm">{skill}</span>)}
                                         </div>
                                     </div>
                                 </div>
                                 <div className="item-action">
-                                    <Link to={`/apply/${internship.id}`} className="apply-btn">View & Apply</Link>
+                                    <Link to={`/apply/${internship.id}`} className="apply-btn">View Details & Apply</Link>
                                 </div>
                             </div>
                         ))}
@@ -153,35 +159,7 @@ function Dashboard() {
                 </section>
             </main>
 
-            <footer className="main-footer">
-                <div className="footer-grid">
-                    <div>
-                        <h3>Quick Links</h3>
-                        <ul>
-                            <li><a href="#">Home</a></li>
-                            <li><a href="#">About MCA</a></li>
-                            <li><a href="#">Internship Policy</a></li>
-                            <li><a href="#">FAQ</a></li>
-                        </ul>
-                    </div>
-                    <div>
-                        <h3>Resources</h3>
-                        <ul>
-                            <li><a href="#">Reports & Publications</a></li>
-                            <li><a href="#">Circulars & Notifications</a></li>
-                            <li><a href="#">Contact Directory</a></li>
-                        </ul>
-                    </div>
-                    <div>
-                        <h3>Contact Us</h3>
-                        <p>Ministry of Corporate Affairs, Government of India<br/>Shastri Bhawan, New Delhi - 110001</p>
-                        <p>Email: support@mca.gov.in<br/>Phone: +91-11-12345678</p>
-                    </div>
-                </div>
-                <div className="footer-bottom">
-                    <p>&copy; 2024 Ministry of Corporate Affairs (MCA). All Rights Reserved.</p>
-                </div>
-            </footer>
+            <Footer />
         </div>
     );
 }

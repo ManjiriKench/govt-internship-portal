@@ -3,23 +3,18 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import './Disclaimer.css';
-import Navbar from "./navbar.jsx"; // Make sure you have the logo in assets
+import Navbar from "./navbar.jsx";
+import Footer from "./footer.jsx"; // Make sure you have the logo in assets
 
 function Disclaimer() {
     return (
         <div className="page-container">
             <header className="main-header">
                 <Navbar />
-                    <h1 className="header-title">GOV. INTERNSHIP SCHEME</h1>
-                    <div className="nav-right">
-                        <button className="nav-button-secondary">Login as Organization</button>
-                        <Link to="/login" className="nav-button-primary">Student</Link>
-                    </div>
 
                 <div className="hero-bg">
                     <div className="hero-content">
                         <h2 className="hero-title">Disclaimer</h2>
-                        <p className="hero-subtitle">Please read the following carefully.</p>
                     </div>
                 </div>
             </header>
@@ -68,16 +63,7 @@ function Disclaimer() {
                 </div>
             </main>
 
-            <footer className="disclaimer-footer">
-                <div className="footer-links">
-                    <a href="#">About Us</a>
-                    <a href="#">Contact</a>
-                    <a href="#">Privacy Policy</a>
-                </div>
-                <div>
-                    &copy; 2024 GOV. INTERNSHIP SCHEME. All rights reserved.
-                </div>
-            </footer>
+            <Footer/>
         </div>
     );
 }

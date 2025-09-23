@@ -3,25 +3,83 @@
 /* --- Main Layout & Header --- */
 
 /* --- Hero Section --- */
-.hero-bg { padding: 4rem 1.5rem; background: #1c322b url('https://placehold.co/1920x1080/1c322b/1c322b?text=') center/cover; }
-.hero-content { width: 100%; max-width: 1200px; margin: 0 auto; display: block; }
-.hero-title { font-size: 1.875rem; font-weight: 700; line-height: 1.2; color: #fff; }
-.hero-subtitle { margin-top: 0.5rem; font-size: 1.125rem; font-weight: 300; color: #d1d5db; }
-.progress-wrapper { margin-top: 1.5rem; max-width: 32rem; }
-.progress-info { margin-bottom: 0.5rem; font-size: 0.875rem; font-weight: 600; color: #fff; }
-.progress-bar { background-color: #4a5568; height: 8px; border-radius: 9999px; overflow: hidden; }
-.progress-fill { height: 100%; background-color: #32CD32; transition: width 0.5s ease-in-out; }
-.progress-steps { display: flex; gap: 1rem; margin-top: 0.75rem; flex-wrap: wrap; }
-.step-item { display: flex; align-items: center; gap: 0.5rem; font-size: 0.75rem; color: #d1d5db; }
-.step-incomplete { opacity: 0.5; }
+.dashboard-bg {
+    padding: 6.5rem 6.5rem;
+    background: #1c322b url('https://placehold.co/1920x1080/1c322b/1c322b?text=') center/cover;
+    color: #fff;
+}
+
+.dashboard-wrapper {
+    max-width: 1780px;
+    margin: 0 auto;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem; /* space between title, subtitle, and progress */
+}
+
+.dashboard-title {
+    font-size: 3rem;
+    font-weight: 700;
+    line-height: 0.5;
+}
+
+.dashboard-subtitle {
+    font-size: 1.25rem;
+    font-weight: 300;
+    margin: 0;
+}
+
+.progress-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    max-width: 32rem;
+}
+
+.progress-info {
+    font-size: 0.875rem;
+    font-weight: 600;
+}
+
+.progress-bar {
+    background-color: #f7f7f8;
+    height: 8px;
+    border-radius: 9999px;
+    overflow: hidden;
+}
+
+.progress-fill {
+    height: 100%;
+    background-color: #32CD32;
+    transition: width 0.5s ease-in-out;
+}
+
+.progress-steps {
+    display: flex;
+    gap: 2.3rem;
+    flex-wrap: wrap;
+}
+
+.step-item {
+    display: flex;
+    padding-top: 0.5rem;
+    align-items: center;
+    gap: 0.3rem;
+    font-weight: 600;
+    font-size: 0.92rem;
+    color: #d1d5db;
+}
+
+
 
 /* --- Main Dashboard Layout --- */
 .dashboard-layout {
     display: flex;
     gap: 2rem;
     padding: 3rem 1.5rem;
-    margin: -3rem auto 0 auto;
-    max-width: 1400px;
+    margin: -4rem auto 0 auto;
+    max-width: 100%;
     background-color: #fff;
     border-top-left-radius: 1.5rem;
     border-top-right-radius: 1.5rem;
@@ -44,11 +102,16 @@
 
 /* --- Sidebar Cards --- */
 .sidebar-card {
-    background-color: #f9fafb;
+    background-color: #f4f4f4;
     border-radius: 0.75rem;
     box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);
     padding: 1.5rem;
     position: relative;
+    transition: all 0.2s;
+}
+
+.sidebar-card:hover {
+    transform: translateY(-4px);
 }
 
 .profile-card { }
@@ -207,7 +270,8 @@
     padding: 0.75rem 1.0rem;
     font-size: 0.82rem;
     border-radius: 1.5rem;
-    font-weight: 5000;
+    font-weight: 600;
+    font-family: "Inter", Arial, sans-serif;
     border: 1px solid #d1d5db;
     background-color: #fff;
     transition: all 0.2s;
@@ -275,7 +339,7 @@
 
 /* --- Internship Feed --- */
 .feed-title {
-    font-size: 1.5rem;
+    font-size: 2rem;
     font-weight: 700;
     color: #1c322b;
     margin-bottom: 1.5rem;
@@ -329,7 +393,7 @@
 }
 
 .item-title {
-    font-size: 1rem;
+    font-size: 1.2rem;
     font-weight: 600;
     color: #111827;
     line-height: 1.4;
@@ -372,10 +436,10 @@
 .apply-btn {
     background-color: #e49b71;
     color: white;
-    padding: 0.6rem 1.25rem;
+    padding: 0.6rem 1.75rem;
     border-radius: 1.2rem;
     font-weight: 600;
-    font-size: 0.875rem;
+    font-size: 0.975rem;
     transition: all 0.2s;
     display: inline-block;
     text-decoration: none;
@@ -396,17 +460,7 @@
 }
 
 /* --- Footer --- */
-.main-footer {
-    background-color: #1c322b;
-    color: #fff;
-    padding: 3rem 1.5rem 1.5rem;
-    margin-top: 3rem;
-}
 
-.footer-bottom {
-    text-align: center;
-    font-size: 0.75rem;
-}
 
 /* --- Responsive Breakpoints --- */
 @media (min-width: 768px) {

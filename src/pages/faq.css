@@ -1,15 +1,33 @@
 /* src/components/Faq.css */
 
 /* --- Shared Header/Hero Styles --- */
-.hero-bg { padding: 5rem 1.5rem; }
-.hero-content { max-width: 1280px; margin: 0 auto; text-align: left; }
-.hero-title { font-size: 1.875rem; font-weight: 700; line-height: 1.2; }
-.hero-subtitle { margin-top: 1rem; font-size: 1.125rem; font-weight: 300; }
+
+.faq-hero-bg {
+    padding: 5rem 1.5rem;
+}
+
+.faq-hero-content {
+    max-width: 1380px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+.faq-hero-title {
+    font-size: 2.5rem; /* increased from 1.275rem */
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+.faq-hero-subtitle {
+    margin-top: 1rem;
+    font-size: 1.25rem; /* increased from 1.125rem */
+    font-weight: 300;
+}
 
 /* --- FAQ Page Specific Layout --- */
 .faq-layout {
     padding: 3rem 1.5rem;
-    margin: -5rem auto 0 auto;
+    margin: -2rem auto 0 auto;
     position: relative;
     z-index: 10;
     background-color: #fff;
@@ -94,8 +112,6 @@
 }
 
 /* --- Footer --- */
-.main-footer { background-color: #1c322b; color: #fff; padding: 3rem 1.5rem 1.5rem; margin-top: 3rem; }
-.footer-bottom { text-align: center; font-size: 0.75rem; }
 
 /* --- Responsive Breakpoints --- */
 @media (min-width: 768px) { /* md */

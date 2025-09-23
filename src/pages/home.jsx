@@ -7,6 +7,7 @@ import './navbar.jsx'
 import heroImage from '../assets/image.png';
 import missionImage from '../assets/mission.jpg';
 import Navbar from "./navbar.jsx";
+import Footer from "./footer.jsx";
 
 function Home() {
     const scrollContainerRef = useRef(null);
@@ -53,17 +54,7 @@ function Home() {
 
     return (
         <>
-            <div className="tricolor-ribbon">
-                <div></div>
-                <div></div>
-                <div></div>
-            </div>
-
             <header className="main-header">
-                <div className="top-bar">
-                    <p>Government of India | Ministry of Corporate Affairs (MoCA)</p>
-                </div>
-
                 <Navbar />
 
                 <div className="hero-bg">
@@ -71,7 +62,7 @@ function Home() {
                         <div className="hero-text">
                             <p className="subtitle">AI-Powered Internship Matching Portal</p>
                             <h2 className="title">for the Youth of <span>BHARAT</span></h2>
-                            <p className="description">An official initiative of the Ministry of Corporate Affairs to empower students by providing meaningful internship opportunities.</p>
+                            <p className="description">An official initiative of the Ministry of Corporate Affairs to empower students by providing meaningful internship opportunities with government organizations and allied institutions.</p>
                             <a href="#" className="discover-path-link">
                                 Discover Your Path
                             </a>
@@ -103,44 +94,50 @@ function Home() {
                 <h2 className="section-title">How the Internship Scheme Works</h2>
                 <div className="timeline-container">
                     <div className="timeline-line"></div>
+
                     <div className="timeline-step">
-                        <div className="timeline-step-content-wrapper">
+                        <div className="timeline-step-content-wrapper odd">
                             <div className="timeline-step-card">
-                                <div className="timeline-step-number">1</div>
                                 <h3>Register</h3>
                                 <p>Students sign up on the MCA Internship Portal with basic details and academic credentials.</p>
                             </div>
+                            <div className="timeline-step-number">1</div>
                         </div>
                     </div>
+
                     <div className="timeline-step">
-                        <div className="timeline-step-content-wrapper">
+                        <div className="timeline-step-content-wrapper even">
                             <div className="timeline-step-card">
-                                <div className="timeline-step-number">2</div>
                                 <h3>AI Matching</h3>
                                 <p>The system uses AI to match students with internships relevant to their skills and interests.</p>
                             </div>
+                            <div className="timeline-step-number">2</div>
                         </div>
                     </div>
+
                     <div className="timeline-step">
-                        <div className="timeline-step-content-wrapper">
+                        <div className="timeline-step-content-wrapper odd">
                             <div className="timeline-step-card">
-                                <div className="timeline-step-number">3</div>
                                 <h3>Apply & Work</h3>
                                 <p>Students can apply, attend selection rounds, and work with top government bodies.</p>
                             </div>
+                            <div className="timeline-step-number">3</div>
                         </div>
                     </div>
-                    <div className="timeline-step" style={{ marginBottom: 0 }}>
-                        <div className="timeline-step-content-wrapper">
+
+                    <div className="timeline-step">
+                        <div className="timeline-step-content-wrapper even">
                             <div className="timeline-step-card">
-                                <div className="timeline-step-number">4</div>
                                 <h3>Certification</h3>
                                 <p>Successful completion of internships earns official certificates from MCA.</p>
                             </div>
+                            <div className="timeline-step-number">4</div>
                         </div>
                     </div>
+
                 </div>
             </section>
+
 
             <section className="content-section light-gray-bg">
                 <div className="eligibility-benefits-grid">
@@ -149,19 +146,43 @@ function Home() {
                         <h3>Are you <span>Eligible</span>?</h3>
                         <div className="info-grid">
                             <div className="info-item">
-                                <div className="info-item-icon">{/* SVG Icon */}</div>
+                                <div className="info-item-icon">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="feather feather-user">
+                                        <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                                        <circle cx="12" cy="7" r="4"></circle>
+                                    </svg>
+                                </div>
                                 <h4>Indian Citizen</h4><p>Applicants must be a citizen of India.</p>
                             </div>
                             <div className="info-item">
-                                <div className="info-item-icon">{/* SVG Icon */}</div>
+                                <div className="info-item-icon">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#2E7D32" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                                        <path d="M16 17a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2h2"/>
+                                        <path d="M10 12h8"/>
+                                        <path d="M15 9l3 3-3 3"/>
+                                        <circle cx="12" cy="7" r="2"/>
+                                    </svg>
+                                </div>
                                 <h4>Academic Enrollment</h4><p>Currently enrolled in a UG/PG program.</p>
                             </div>
                             <div className="info-item">
-                                <div className="info-item-icon">{/* SVG Icon */}</div>
+                                <div className="info-item-icon">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#2E7D32" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                                        <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20V5H6.5A2.5 2.5 0 0 0 4 7.5v11z"/>
+                                        <path d="M20 17H6.5A2.5 2.5 0 0 1 4 19.5"/>
+                                        <polyline points="9 11 11 13 15 9"/>
+                                    </svg>
+                                </div>
                                 <h4>Strong Academics</h4><p>A strong academic background is preferred.</p>
                             </div>
                             <div className="info-item">
-                                <div className="info-item-icon">{/* SVG Icon */}</div>
+                                <div className="info-item-icon">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#2E7D32" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                                        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                                        <path d="M12 7c-2.76 0-5 2.24-5 5h10c0-2.76-2.24-5-5-5z"/>
+                                        <path d="M12 10c-1.1 0-2 .9-2 2h4c0-1.1-.9-2-2-2z"/>
+                                    </svg>
+                                </div>
                                 <h4>Public Service Motivation</h4><p>A genuine motivation to contribute.</p>
                             </div>
                         </div>
@@ -171,19 +192,53 @@ function Home() {
                         <h3>Core Benefits for <span>MCA Internship Scheme</span></h3>
                         <div className="info-grid">
                             <div className="info-item">
-                                <div className="info-item-icon">{/* SVG Icon */}</div>
+                                <div className="info-item-icon">
+                                    {/* Example SVG Icon */}
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#2E7D32" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                                        <path d="M17.5 17.5L19 19l2.5-2.5"/>
+                                        <path d="M19 12v-1.5a4.5 4.5 0 0 0-4.5-4.5h- металл 1a4.5 4.5 0 0 0-4.5 4.5V12"/>
+                                        <path d="M12 12h8"/>
+                                        <circle cx="6" cy="12" r="3"/>
+                                        <path d="M3 12h1m16 0h1"/>
+                                    </svg>
+                                </div>
                                 <h4>Hands-on Experience</h4><p>Gain practical experience in government.</p>
                             </div>
                             <div className="info-item">
-                                <div className="info-item-icon">{/* SVG Icon */}</div>
+                                <div className="info-item-icon">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#2E7D32" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                                        <circle cx="12" cy="12" r="10"/>
+                                        <path d="M2 12h20"/>
+                                        <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+                                    </svg>
+                                </div>
                                 <h4>Real-world Exposure</h4><p>Exposure to real-world challenges.</p>
                             </div>
                             <div className="info-item">
-                                <div className="info-item-icon">{/* SVG Icon */}</div>
+                                <div className="info-item-icon">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#2E7D32" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                                        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                                        <polyline points="14 2 14 8 20 8"/>
+                                        <circle cx="12" cy="15" r="3"/>
+                                        <path d="M10.5 13.5L9 12"/>
+                                        <path d="M13.5 13.5L15 12"/>
+                                        <path d="M10.5 16.5L9 18"/>
+                                        <path d="M13.5 16.5L15 18"/>
+                                    </svg>
+                                </div>
                                 <h4>Official Certification</h4><p>Earns an official certificate from MCA.</p>
                             </div>
                             <div className="info-item">
-                                <div className="info-item-icon">{/* SVG Icon */}</div>
+                                <div className="info-item-icon">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#2E7D32" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                                        <circle cx="12" cy="5" r="3"/>
+                                        <path d="M12 8v5"/>
+                                        <circle cx="18" cy="17" r="3"/>
+                                        <path d="M15 15.5l-3-1.5"/>
+                                        <circle cx="6" cy="17" r="3"/>
+                                        <path d="M9 15.5l3-1.5"/>
+                                    </svg>
+                                </div>
                                 <h4>Professional Networking</h4><p>Connect with top government officials.</p>
                             </div>
                         </div>
@@ -195,60 +250,68 @@ function Home() {
 
             <main className="internships-section">
                 <h2 className="section-title">Featured Internship Opportunities</h2>
-                <div id="scroll-container" ref={scrollContainerRef}>
-                    {/* Original Cards */}
-                    <div className="internship-card">
-                        <div className="card-image-wrapper"><img src="https://placehold.co/600x400/32CD32/FFFFFF?text=Data+Analyst" alt="Data Analyst"/></div>
-                        <div className="card-content"><h3>Data Analyst Intern</h3><p>Department of Treasury</p><a href="#">View Details</a></div>
-                    </div>
-                    <div className="internship-card">
-                        <div className="card-image-wrapper"><img src="https://placehold.co/600x400/94A3B8/FFFFFF?text=Environmental" alt="Environmental"/></div>
-                        <div className="card-content"><h3>Environmental Policy Intern</h3><p>Ministry of Environment</p><a href="#">View Details</a></div>
-                    </div>
-                    <div className="internship-card">
-                        <div className="card-image-wrapper"><img src="https://placehold.co/600x400/60A5FA/FFFFFF?text=Public+Health" alt="Health"/></div>
-                        <div className="card-content"><h3>Public Health Intern</h3><p>Department of Health</p><a href="#">View Details</a></div>
-                    </div>
-                    <div className="internship-card">
-                        <div className="card-image-wrapper"><img src="https://placehold.co/600x400/EC4899/FFFFFF?text=Software+Dev" alt="Software"/></div>
-                        <div className="card-content"><h3>Software Development Intern</h3><p>Department of Defense</p><a href="#">View Details</a></div>
-                    </div>
-                    {/* Duplicate Cards for seamless scroll effect */}
-                    <div className="internship-card">
-                        <div className="card-image-wrapper"><img src="https://placehold.co/600x400/32CD32/FFFFFF?text=Data+Analyst" alt="Data Analyst"/></div>
-                        <div className="card-content"><h3>Data Analyst Intern</h3><p>Department of Treasury</p><a href="#">View Details</a></div>
-                    </div>
-                    <div className="internship-card">
-                        <div className="card-image-wrapper"><img src="https://placehold.co/600x400/94A3B8/FFFFFF?text=Environmental" alt="Environmental"/></div>
-                        <div className="card-content"><h3>Environmental Policy Intern</h3><p>Ministry of Environment</p><a href="#">View Details</a></div>
-                    </div>
-                    <div className="internship-card">
-                        <div className="card-image-wrapper"><img src="https://placehold.co/600x400/60A5FA/FFFFFF?text=Public+Health" alt="Health"/></div>
-                        <div className="card-content"><h3>Public Health Intern</h3><p>Department of Health</p><a href="#">View Details</a></div>
-                    </div>
-                    <div className="internship-card">
-                        <div className="card-image-wrapper"><img src="https://placehold.co/600x400/EC4899/FFFFFF?text=Software+Dev" alt="Software"/></div>
-                        <div className="card-content"><h3>Software Development Intern</h3><p>Department of Defense</p><a href="#">View Details</a></div>
+                <div className="scroll-wrapper">
+                    <div id="scroll-container" ref={scrollContainerRef}>
+                        {[
+                            {
+                                title: "Data Analyst Intern",
+                                department: "Department of Treasury",
+                                img: "https://placehold.co/600x400/32CD32/FFFFFF?text=Data+Analyst"
+                            },
+                            {
+                                title: "Environmental Policy Intern",
+                                department: "Ministry of Environment",
+                                img: "https://placehold.co/600x400/94A3B8/FFFFFF?text=Environmental"
+                            },
+                            {
+                                title: "Public Health Intern",
+                                department: "Department of Health",
+                                img: "https://placehold.co/600x400/60A5FA/FFFFFF?text=Public+Health"
+                            },
+                            {
+                                title: "Software Development Intern",
+                                department: "Department of Defense",
+                                img: "https://placehold.co/600x400/EC4899/FFFFFF?text=Software+Dev"
+                            },
+                            // Duplicates for seamless scroll effect
+                            {
+                                title: "Data Analyst Intern",
+                                department: "Department of Treasury",
+                                img: "https://placehold.co/600x400/32CD32/FFFFFF?text=Data+Analyst"
+                            },
+                            {
+                                title: "Environmental Policy Intern",
+                                department: "Ministry of Environment",
+                                img: "https://placehold.co/600x400/94A3B8/FFFFFF?text=Environmental"
+                            },
+                            {
+                                title: "Public Health Intern",
+                                department: "Department of Health",
+                                img: "https://placehold.co/600x400/60A5FA/FFFFFF?text=Public+Health"
+                            },
+                            {
+                                title: "Software Development Intern",
+                                department: "Department of Defense",
+                                img: "https://placehold.co/600x400/EC4899/FFFFFF?text=Software+Dev"
+                            }
+                        ].map((internship, idx) => (
+                            <div className="internship-card" key={idx}>
+                                <div className="card-image-wrapper">
+                                    <img src={internship.img} alt={internship.title} />
+                                </div>
+                                <div className="card-content">
+                                    <h3>{internship.title}</h3>
+                                    <p>{internship.department}</p>
+                                    <a href="#">View Details</a>
+                                </div>
+                            </div>
+                        ))}
                     </div>
                 </div>
             </main>
 
-            <footer className="main-footer">
-                <div className="footer-grid">
-                    <div className="footer-links">
-                        <h3>Quick Links</h3><ul><li><a href="#">Home</a></li><li><a href="#">About MCA</a></li><li><a href="#">FAQ</a></li></ul>
-                    </div>
-                    <div className="footer-links">
-                        <h3>Resources</h3><ul><li><a href="#">Reports & Publications</a></li><li><a href="#">Circulars</a></li></ul>
-                    </div>
-                    <div className="footer-contact">
-                        <h3>Contact Us</h3><p>Ministry of Corporate Affairs, Government of India<br/>New Delhi - 110001</p>
-                    </div>
-                </div>
-                <div className="footer-bottom">
-                    <p>&copy; 2024 Ministry of Corporate Affairs (MCA). All Rights Reserved.</p>
-                </div>
-            </footer>
+
+            <Footer/>
         </>
     );
 }

@@ -2,16 +2,15 @@
 
 /* Note: Header and Footer styles are repeated from Home.css.
    For larger apps, you would create shared Header and Footer components. */
-.hero-bg {
+.banner-bg {
     background: #1c322b url('https://placehold.co/1920x1080/1c322b/1c322b?text=') center center/cover;
     color: #ffffff;
-    padding: 5rem 1.5rem;
+    padding: 7rem 1.5rem;
 }
-.hero-content { max-width: 80rem; margin: 0 auto; }
-.hero-text { text-align: left; }
-.hero-text .title { font-size: 1.875rem; font-weight: 700; line-height: 1.2; }
-.hero-text .subtitle { font-size: 1.125rem; font-weight: 300; margin-top: 1rem; }
-
+.banner-content { max-width: 90%; margin: 0 auto; }
+.banner-content { max-width: 90%; margin: 0 auto; text-align: left; }
+.banner-title { font-size: 3rem; font-weight: 700; line-height: 1.0; }
+.banner-subtitle { margin-top: 1rem; font-size: 1.225rem; font-weight: 500; }
 /* Main Login Content */
 .login-main {
     padding: 3rem 1.5rem;
@@ -155,14 +154,6 @@
 }
 
 /* Footer (Same as Home) */
-.main-footer { background-color: #1c322b; color: #ffffff; padding: 3rem 0 1.5rem; margin-top: 3rem; }
-.footer-grid { max-width: 80rem; margin: 0 auto; display: grid; grid-template-columns: 1fr; gap: 2rem; padding: 0 1.5rem; }
-.footer-grid h3 { font-weight: 600; margin-bottom: 1rem; }
-.footer-grid ul { list-style: none; line-height: 1.75; font-size: 0.875rem; }
-.footer-grid a { color: #ffffff; }
-.footer-grid a:hover { text-decoration: underline; }
-.footer-contact p { font-size: 0.875rem; }
-.footer-bottom { margin-top: 2rem; border-top: 1px solid #4a5568; padding-top: 1.5rem; text-align: center; font-size: 0.75rem; }
 
 
 @media (min-width: 768px) {

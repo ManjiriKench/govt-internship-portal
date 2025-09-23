@@ -3,40 +3,46 @@
 /* --- Main Layout & Shared Header/Footer --- */
 
 /* Hero Section */
-.hero-bg {
+.apply-hero-bg {
     background: #1c322b url('https://placehold.co/1920x1080/1c322b/1c322b?text=') center center/cover;
     color: #ffffff;
-    padding: 5rem 1.5rem;
-    position: relative;
+    padding: 4rem 1.5rem;
 }
-.hero-content {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-    gap: 3rem;
-    max-width: 1400px;
+
+.apply-hero-content {
+    max-width: 1350px;
     margin: 0 auto;
 }
-.hero-text { text-align: left; flex: 1; }
-.hero-text .subtitle { font-size: 1.125rem; font-weight: 300; }
-.hero-text .title { font-size: 2.5rem; font-weight: 700; line-height: 1.2; }
-.hero-text .title span { color: #facc15; }
-.hero-text .description { margin-top: 1rem; color: #e5e7eb; max-width: 500px; }
-.discover-path-link:hover { transform: scale(1.05); }
-.hero-image-container { flex: 0 0 auto; display: flex; justify-content: center; transition: transform 0.5s; }
-.hero-image-container:hover { transform: scale(1.05); }
-.hero-image-container img { border-radius: 0.5rem; box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1), 0 4px 6px -2px rgba(0,0,0,0.05); width: 400px; height: auto; }
-.hero-bg { padding: 4rem 1.5rem; }
-.hero-content { max-width: 1280px; margin: 0 auto; }
-.hero-title { font-size: 1.875rem; font-weight: 700; line-height: 1.2; }
-.hero-subtitle { margin-top: 0.5rem; font-size: 1.125rem; font-weight: 300; }
+
+.apply-hero-title {
+    font-size: 1.875rem; /* 30px */
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+.apply-hero-subtitle {
+    margin-top: 0.5rem;
+    font-size: 1.125rem; /* 18px */
+    font-weight: 300;
+}
+
+@media (min-width: 768px) {
+    .apply-hero-bg {
+        padding: 6rem 3rem;
+    }
+    .apply-hero-title {
+        font-size: 3rem; /* 48px */
+    }
+    .apply-hero-subtitle {
+        font-size: 1.25rem; /* 20px */
+    }
+}
 
 /* --- Apply Page Specific Layout --- */
 .apply-layout {
     padding: 3rem 1.5rem;
-    max-width: 1024px;
-    margin: -5rem auto 0 auto;
+    max-width: 100%;
+    margin: -3rem auto 0 auto;
     position: relative;
     z-index: 10;
     background-color: #fff;
@@ -57,26 +63,28 @@
 .apply-flow-container { display: flex; flex-direction: column; gap: 2rem; }
 
 /* --- Content Cards --- */
-.content-card { background-color: #f9fafb; border-radius: 0.5rem; box-shadow: 0 2px 4px rgba(0,0,0,0.05); padding: 1.5rem; }
+.content-card { background-color: #f4f4f4; border-radius: 1.0rem; box-shadow: 0 10px 4px rgba(0,0,0,0.07); padding: 1.5rem; }
 .content-card h3 { font-size: 1.25rem; font-weight: 700; color: #1c322b; margin-bottom: 0.5rem; }
 .content-card h3.text-center { text-align: center; }
 .content-card .section-subtitle { font-size: 0.875rem; color: #4b5563; margin-bottom: 1.5rem; }
+
+
 
 .overview-header { display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem; flex-wrap: wrap; }
 .overview-header img { border-radius: 50%; }
 .internship-title { font-size: 1.875rem; font-weight: 700; color: #1c322b; }
 .internship-org { font-size: 1.125rem; color: #4b5563; font-weight: 600; }
-.verified-badge { margin-left: auto; font-weight: 600; color: #16a34a; display: flex; align-items: center; gap: 0.5rem; }
+.verified-badge { margin-left: auto;font-size: 1.0rem; font-weight: 600; color: #16a34a; display: flex; align-items: center; gap: 0.5rem; }
 
-.details-grid { display: grid; grid-template-columns: 1fr; gap: 1rem; margin-top: 1rem; font-size: 0.875rem; font-weight: 500; color: #374151;}
+.details-grid { display: grid; grid-template-columns: 1fr; gap: 1rem; margin-top: 1.2rem; font-size: 0.875rem; font-weight: 500; color: #374151;}
 .details-grid p { display: flex; align-items: center; gap: 0.5rem; }
 .detail-icon { color: #e49b71; }
 
 .company-description { margin-top: 1.5rem; color: #374151; }
 .responsibilities-title { font-weight: 700; color: #1f2937; margin-top: 1.5rem; margin-bottom: 0.5rem; }
-.responsibilities-list { list-style: none; display: flex; flex-direction: column; gap: 0.5rem; color: #374151; }
+.responsibilities-list { list-style: none; display: flex; flex-direction: column; gap: 0.9rem; color: #374151; }
 .responsibilities-list li { display: flex; align-items: flex-start; gap: 0.5rem; }
-.responsibilities-list .fa-check-circle { color: #22c55e; margin-top: 4px; }
+.responsibilities-list li.fa-check-circle { color: #26cf64; margin-top: 4px; }
 
 /* --- Upload & AI Flow --- */
 .upload-area { display: flex; flex-direction: column; align-items: flex-start; gap: 1rem; }
@@ -120,13 +128,6 @@
 .submit-note { margin-top: 0.5rem; font-size: 0.875rem; color: #4b5563; }
 
 /* --- Footer --- */
-.main-footer { background-color: #1c322b; color: #fff; padding: 3rem 1.5rem 1.5rem; margin-top: 3rem; }
-.footer-grid { max-width: 1280px; margin: 0 auto; display: grid; grid-template-columns: 1fr; gap: 2rem; }
-.footer-grid h3 { font-weight: 600; margin-bottom: 1rem; }
-.footer-grid ul { list-style: none; display: flex; flex-direction: column; gap: 0.5rem; }
-.footer-grid p { line-height: 1.6; }
-.footer-grid a:hover { text-decoration: underline; }
-.footer-bottom { border-top: 1px solid #4a5568; margin-top: 2rem; padding-top: 1.5rem; text-align: center; font-size: 0.75rem; }
 
 /* --- Responsive Breakpoints --- */
 @media (min-width: 640px) { /* sm */

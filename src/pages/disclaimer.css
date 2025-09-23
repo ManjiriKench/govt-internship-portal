@@ -3,14 +3,14 @@
 /* --- Shared Header/Hero Styles (can be refactored later) --- */
 .page-container { background-color: #f3f4f6; }
 .hero-bg { padding: 4rem 1.5rem; }
-.hero-content { max-width: 1280px; margin: 0 auto; }
-.hero-title { font-size: 1.875rem; font-weight: 700; line-height: 1.2; }
-.hero-subtitle { margin-top: 0.5rem; font-size: 1.125rem; font-weight: 300; }
+.hero-content { max-width: 1780px; margin: 0 auto; text-align: left; }
+.hero-title { font-size: 1.975rem; font-weight: 700; line-height: 1.2; }
+.hero-subtitle { margin-top: 1rem; font-size: 1.125rem; font-weight: 300; }
 
 /* --- Disclaimer Page Specific Layout --- */
 .disclaimer-layout {
     padding: 3rem 1.5rem;
-    margin: -5rem auto 0 auto;
+    margin: -1rem auto 0 auto;
     position: relative;
     z-index: 10;
     background-color: #fff;
@@ -56,23 +56,7 @@
 }
 
 /* --- Footer --- */
-.disclaimer-footer {
-    background-color: #1c322b;
-    color: #fff;
-    padding: 1.5rem;
-    margin-top: 3rem;
-    text-align: center;
-    font-size: 0.875rem;
-}
-.disclaimer-footer .footer-links {
-    margin-bottom: 1rem;
-    display: flex;
-    justify-content: center;
-    gap: 1rem;
-}
-.disclaimer-footer a:hover {
-    text-decoration: underline;
-}
+
 
 /* --- Responsive Breakpoints --- */
 @media (min-width: 768px) { /* md */

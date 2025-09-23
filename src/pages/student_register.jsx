@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import './student_register.css'; // We'll create this CSS file next
 import Navbar from "./navbar.jsx";
+import Footer from "./footer.jsx";
+
 
 function Register() {
     const navigate = useNavigate();
@@ -64,7 +66,7 @@ function Register() {
                     <div className="hero-content section-container">
                         <div className="hero-text">
                             <h2 className="title">Student Registration</h2>
-                            <p className="subtitle">Create your account to start your journey.</p>
+                            <p className="subtitle">Create your account to start your journey with AI-powered internship matching.</p>
                         </div>
                     </div>
                 </div>
@@ -79,22 +81,27 @@ function Register() {
                             {/* Form fields */}
                             <div className="form-group">
                                 <label htmlFor="fullName">Full Name</label>
-                                <input type="text" id="fullName" name="fullName" value={formData.fullName} onChange={handleChange} required placeholder="e.g., Manjiri Kench" />
+                                <small className="form-hint">(This will be used for all official communication.)</small>
+                                <input type="text" id="fullName" name="fullName" value={formData.fullName} onChange={handleChange} required placeholder="e.g., John Doe" />
                             </div>
                             <div className="form-group">
                                 <label htmlFor="email">Email Address</label>
-                                <input type="email" id="email" name="email" value={formData.email} onChange={handleChange} required placeholder="e.g., manjiri123@gmail.com" />
+                                <small className="form-hint">(This will be your primary login ID))</small>
+                                <input type="email" id="email" name="email" value={formData.email} onChange={handleChange} required placeholder="e.g., john123@gmail.com" />
                             </div>
                             <div className="form-group">
                                 <label htmlFor="password">Password</label>
+                                <small className="form-hint">(Minimum 8 characters, with one number & special character)</small>
                                 <input type="password" id="password" name="password" value={formData.password} onChange={handleChange} required placeholder="••••••" />
                             </div>
                             <div className="form-group">
                                 <label htmlFor="confirmPassword">Confirm Password</label>
+                                <small className="form-hint">(Re-enter your password)</small>
                                 <input type="password" id="confirmPassword" name="confirmPassword" value={formData.confirmPassword} onChange={handleChange} required placeholder="••••••" />
                             </div>
                             <div className="form-group">
                                 <label htmlFor="phone">Phone Number</label>
+                                <small className="form-hint">(For verification & internship alerts)</small>
                                 <input type="tel" id="phone" name="phone" value={formData.phone} onChange={handleChange} required placeholder="+91 9876543210" />
                             </div>
                             <div className="form-group">
@@ -125,8 +132,37 @@ function Register() {
 
                         <div className="checkbox-section">
                             <div className="checkbox-group">
-                                <input id="agreeTerms" name="agreeTerms" type="checkbox" checked={formData.agreeTerms} onChange={handleChange} required/>
-                                <label htmlFor="agreeTerms">I agree to the <a href="#">Terms & Conditions</a> & <a href="#">Privacy Policy</a></label>
+                                <input
+                                    id="agreeTerms"
+                                    name="agreeTerms"
+                                    type="checkbox"
+                                    checked={formData.agreeTerms}
+                                    onChange={e => setFormData(prev => ({
+                                        ...prev,
+                                        agreeTerms: e.target.checked,
+                                        receiveAlerts: false
+                                    }))}
+                                    required
+                                />
+                                <label htmlFor="agreeTerms">
+                                    I agree to the <a href="#">Terms & Conditions</a> & <a href="#">Privacy Policy</a>
+                                </label>
+                            </div>
+                            <div className="checkbox-group">
+                                <input
+                                    id="receiveAlerts"
+                                    name="receiveAlerts"
+                                    type="checkbox"
+                                    checked={formData.receiveAlerts || false}
+                                    onChange={e => setFormData(prev => ({
+                                        ...prev,
+                                        receiveAlerts: e.target.checked,
+                                        agreeTerms: false
+                                    }))}
+                                />
+                                <label htmlFor="receiveAlerts">
+                                    I want to receive internship alerts & AI-based recommendations
+                                </label>
                             </div>
                         </div>
 
@@ -138,6 +174,8 @@ function Register() {
                     <div className="login-prompt">
                         <p>Already have an account? <Link to="/login" className="login-link">Login here</Link></p>
                     </div>
+                    <br/>
+                    <small className="end_line">Your Skills + AI Guidance = The Perfect Match for Government & Industry Internships in Bharat.</small>
 
                     {error && <div className="message-box error">{error}</div>}
                     {message && <div className="message-box success">{message}</div>}
@@ -145,15 +183,7 @@ function Register() {
                 </div>
             </main>
 
-            <footer className="main-footer">
-                {/* Footer content is identical to other pages */}
-                <div className="footer-grid">
-                    <div className="footer-links"><h3>Quick Links</h3><ul><li><a href="#">Home</a></li><li><a href="#">About MCA</a></li></ul></div>
-                    <div className="footer-links"><h3>Resources</h3><ul><li><a href="#">Reports</a></li><li><a href="#">Circulars</a></li></ul></div>
-                    <div className="footer-contact"><h3>Contact Us</h3><p>Ministry of Corporate Affairs, Government of India<br/>New Delhi - 110001</p></div>
-                </div>
-                <div className="footer-bottom"><p>&copy; 2024 Ministry of Corporate Affairs (MCA). All Rights Reserved.</p></div>
-            </footer>
+            <Footer/>
         </div>
     );
 }
