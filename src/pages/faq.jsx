@@ -3,7 +3,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import './faq.css';
-import FaqItem from './FaqItem';
+import FaqItem from './faqItem.jsx';
 import Navbar from "./navbar.jsx";
 import Footer from "./footer.jsx"; // Import the reusable item component
 
