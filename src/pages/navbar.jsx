@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import './navbar.css';
 import mcaLogo from '../assets/mca.jpeg';
-import adminLogo from '../assets/worker-employee-businessman-avatar-profile-icon-vector.jpg';
 
 const Navbar = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);

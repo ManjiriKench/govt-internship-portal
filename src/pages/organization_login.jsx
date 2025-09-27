@@ -2,7 +2,7 @@
 
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import './Organization_login.css';
+import './organization_login.css';
 import Navbar from "./navbar.jsx";
 import Footer from "./footer.jsx";
 
