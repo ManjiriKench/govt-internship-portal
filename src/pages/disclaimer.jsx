@@ -2,7 +2,7 @@
 
 import React from 'react';
 import { Link } from 'react-router-dom';
-import './Disclaimer.css';
+import './disclaimer.css';
 import Navbar from "./navbar.jsx";
 import Footer from "./footer.jsx"; // Make sure you have the logo in assets
 
