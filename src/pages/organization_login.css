@@ -1,50 +1,312 @@
 /* src/components/OrganizationLogin.css */
 
-.hero-bg {
-    background: #1c322b url('https://placehold.co/1920x1080/1c322b/1c322b?text=') center center/cover;
+/* --- Overall Page Container (if you have one, ensure it's not overriding) --- */
+/* If you have a global page container or App.css, ensure its background is light.
+   Otherwise, the body or html might need a background-color: #f0f2f5; (light gray) */
+body {
+    background-color: #f0f2f5; /* Light gray background for the entire page */
+    margin: 0;
+    font-family: 'Inter', sans-serif; /* Example font */
+}
+
+
+/* --- Header (Top Navbar area) --- */
+/* Assuming 'main-header' is external, if it's part of this component, adjust its classes here.
+   The image shows the header with the same dark green background as the hero section */
+.org-login-main-header {
+    background-color: #1c322b; /* Dark green background for the header area */
     color: #ffffff;
-    padding: 5rem 1.5rem;
+    /* No padding here, as the Navbar handles its own padding */
 }
-.hero-content { max-width: 80rem; margin: 0 auto; text-align: left; }
-.hero-content .title { font-size: 1.975rem; font-weight: 700; line-height: 1.2; }
-.hero-content .subtitle { margin-top: 1rem; font-size: 1.125rem; font-weight: 300; }
 
-/* Main Login Content */
-.login-main { padding: 3rem 1.5rem; margin-top: -2.5rem; position: relative; z-index: 10; display: flex; justify-content: center; align-items: center; }
-.login-container { background-color: #ffffff; border-radius: 0.5rem; box-shadow: 0 20px 25px -5px rgba(0,0,0,0.1), 0 10px 10px -5px rgba(0,0,0,0.04); padding: 2rem; width: 100%; max-width: 28rem; }
-.login-title { font-size: 1.875rem; font-weight: 700; text-align: center; color: #1c322b; margin-bottom: 1.5rem; }
-.login-form { display: flex; flex-direction: column; gap: 1.5rem; }
-.form-group { display: flex; flex-direction: column; }
-.form-group label { font-size: 0.875rem; font-weight: 500; color: #374151; margin-bottom: 0.25rem; }
-.form-group input { width: 100%; padding: 0.5rem 1rem; border: 1px solid #d1d5db; border-radius: 0.375rem; box-shadow: 0 1px 2px 0 rgba(0,0,0,0.05); transition: border-color 0.2s; }
-.form-group input:hover { border-color: #4ade80; }
-.form-group input:focus { outline: none; border-color: #22c55e; box-shadow: 0 0 0 2px rgba(34, 197, 94, 0.3); }
 
-.form-options { display: flex; align-items: center; justify-content: space-between; font-size: 0.875rem; }
-.remember-me { display: flex; align-items: center; }
-.remember-me input { height: 1rem; width: 1rem; border-radius: 0.25rem; border-color: #d1d5db; color: #e49b71; }
-.remember-me label { margin-left: 0.5rem; color: #111827; }
-
-.forgot-password-link { font-weight: 500; color: #e49b71; transition: color 0.2s; }
-.forgot-password-link:hover { color: #b47a5a; }
-
-.submit-button { width: 100%; display: flex; justify-content: center; padding: 0.75rem 1rem; border: 1px solid transparent; border-radius: 0.375rem; box-shadow: 0 1px 2px 0 rgba(0,0,0,0.05); font-size: 1.125rem; font-weight: 700; color: #ffffff; background-color: #e49b71; transition: background-color 0.2s, transform 0.2s; }
-.submit-button:hover { background-color: #b47a5a; transform: scale(1.05); }
-
-.register-prompt { margin-top: 1.5rem; text-align: center; font-size: 0.875rem; }
-.register-link { font-weight: 500; color: #e49b71; transition: color 0.2s; }
-.register-link:hover { color: #b47a5a; }
-
-.message-box { margin-top: 1rem; padding: 1rem; border-radius: 0.375rem; background-color: #dcfce7; color: #166534; border: 1px solid #86efac; text-align: center; }
-
-/* Footer */
-
-@media (min-width: 768px) {
-    .hero-bg { padding: 7rem 3rem; }
-    .hero-content .title { font-size: 3rem; }
-    .login-main { margin-top: -5rem; }
-    .footer-grid { grid-template-columns: repeat(3, 1fr); }
+/* --- Hero Section (The dark green banner with title/subtitle) --- */
+.org-login-hero-bg {
+    background-color: #1c322b; /* Explicitly dark green */
+    color: #ffffff;
+    padding: 5rem 1.5rem; /* Adjusted padding to match image more closely */
+    /* Remove background-image URL as it's not visible/needed for this specific hero style */
+    /* position: relative; Remove if not absolutely necessary, simplifies */
 }
-@media (min-width: 1024px) {
-    .hero-bg { padding-left: 6rem; padding-right: 6rem; }
+.org-login-hero-content {
+    max-width: 80rem; /* Consistent max-width */
+    margin: 0 auto;
+    text-align: left;
+    /* section-container and hero-text classes are not in the provided JSX for the hero part,
+       so their styles were removed or consolidated */
 }
+.org-login-hero-content .org-login-title-text {
+    font-size: 2.975rem; /* ~31px */
+    font-weight: 700;
+    line-height: 1.2;
+}
+.org-login-hero-content .org-login-subtitle {
+    margin-top: 0.5rem; /* Reduced margin-top */
+    font-size: 1.125rem; /* ~18px */
+    font-weight: 300;
+}
+
+/* --- Main Login Content (The white card) --- */
+.org-login-main {
+    /* Removed padding to let the container define spacing */
+    margin-top: -3rem; /* Adjusted negative margin to overlap more, based on image */
+    position: relative;
+    z-index: 10;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* No specific background needed here, as the body handles it */
+    padding: 0 1.5rem; /* Add horizontal padding for smaller screens */
+}
+.org-login-container {
+    background-color: #ffffff; /* White background */
+    border-radius: 0.5rem;
+    box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1); /* Lighter shadow to match image */
+    padding: 2rem;
+    width: 100%;
+    max-width: 28rem; /* Keeps it contained */
+}
+.org-login-title {
+    font-size: 1.5rem; /* Slightly smaller to match image */
+    font-weight: 700;
+    text-align: center;
+    color: #1c322b;
+    margin-bottom: 1.5rem;
+}
+.org-login-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem; /* Slightly reduced gap */
+}
+.org-login-form-group {
+    display: flex;
+    flex-direction: column;
+}
+.org-login-form-group label {
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: #374151;
+    margin-bottom: 0.4rem; /* Adjusted label spacing */
+}
+.org-login-form-group input {
+    width: 100%;
+    padding: 0.75rem 1rem; /* Increased padding for input fields */
+    border: 1px solid #d1d5db;
+    border-radius: 0.575rem;
+    box-shadow: none; /* Removed shadow from inputs to match image */
+    transition: border-color 0.2s;
+    font-size: 1rem; /* Ensure consistent font size */
+}
+.org-login-form-group input:hover {
+    border-color: #a7b7c9; /* Subtle hover effect */
+}
+.org-login-form-group input:focus {
+    outline: none;
+    border-color: #6d9c8f; /* Focus color for inputs (a more subtle green/teal) */
+    box-shadow: 0 0 0 1px #6d9c8f; /* Subtle focus ring */
+}
+
+.org-login-form-options {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 0.875rem;
+    margin-top: 0.5rem; /* Adjusted spacing */
+}
+.org-login-remember-me {
+    display: flex;
+    align-items: center;
+}
+.org-login-remember-me input {
+    height: 1rem;
+    width: 1rem;
+    border-radius: 0.25rem;
+    border-color: #d1d5db;
+    color: #1c322b; /* Checkbox color changed to match main branding */
+    accent-color: #1c322b; /* Ensures browser default is also dark green */
+}
+.org-login-remember-me label {
+    margin-left: 0.5rem;
+    color: #374151; /* Darker text color */
+}
+
+.org-login-forgot-password-link {
+    font-weight: 500;
+    color: #e49b71; /* Accent color */
+    text-decoration: none; /* No underline by default */
+    transition: color 0.2s;
+}
+.org-login-forgot-password-link:hover {
+    color: #b47a5a;
+    text-decoration: underline; /* Underline on hover */
+}
+
+.org-login-submit-button {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 0.75rem 1.5rem; /* Adjusted padding */
+    border: none; /* No border */
+    border-radius: 1.375rem;
+    box-shadow: none; /* Removed shadow from button to match image */
+    font-size: 1.05rem; /* Slightly smaller font size */
+    font-weight: 700;
+    color: #ffffff;
+    background-color: #1c322b; /* Dark green button to match image */
+    transition: background-color 0.2s, transform 0.2s;
+    cursor: pointer;
+    margin-top: 1rem; /* Add some space above the button */
+}
+.org-login-submit-button:hover {
+    background-color: #2a4d41; /* Slightly lighter green on hover */
+    transform: translateY(-1px); /* Subtle lift on hover */
+}
+
+.org-login-register-prompt {
+    margin-top: 2rem; /* More space above this section */
+    text-align: center;
+    font-size: 0.875rem;
+    color: #374151; /* Darker text color */
+}
+.org-login-register-prompt p {
+    margin: 0; /* Remove default paragraph margin */
+}
+.org-login-register-link {
+    font-weight: 500;
+    color: #e49b71; /* Accent color */
+    text-decoration: none; /* No underline by default */
+    transition: color 0.2s;
+}
+.org-login-register-link:hover {
+    color: #b47a5a;
+    text-decoration: underline; /* Underline on hover */
+}
+
+.org-login-message-box {
+    margin-top: 1.5rem;
+    padding: 0.75rem 1rem; /* Reduced padding */
+    border-radius: 0.375rem;
+    background-color: #dcfce7;
+    color: #166534;
+    border: 1px solid #86efac;
+    text-align: center;
+    font-size: 0.9rem; /* Slightly smaller font for message */
+}
+
+/* --- Responsive Adjustments --- */
+/* Organization Login Mobile Fixes */
+
+/* Add these mobile-specific fixes to your existing OrganizationLogin.css */
+
+@media (max-width: 767px) {
+    /* Hero section mobile adjustments */
+    .org-login-hero-bg {
+        padding: 2rem 1rem; /* Reduced padding for mobile */
+        min-height: auto; /* Don't force height on mobile */
+    }
+
+    .org-login-hero-content .org-login-title-text {
+        font-size: 1.5rem; /* Smaller title on mobile */
+        line-height: 1.3;
+    }
+
+    .org-login-hero-content .org-login-subtitle {
+        font-size: 0.95rem; /* Smaller subtitle */
+        margin-top: 0.5rem;
+    }
+
+    /* Main login container mobile fixes */
+    .org-login-main {
+        margin-top: -2rem; /* Reduce overlap on mobile */
+        padding: 0 1rem 2rem 1rem; /* Add bottom padding, reduce sides */
+        min-height: calc(100vh - 150px); /* Ensure enough space */
+    }
+
+    .org-login-container {
+        width: 100%; /* Full width on mobile */
+        max-width: none; /* Remove max-width constraint */
+        margin: 0; /* Remove any margin */
+        padding: 1.5rem; /* Reduce padding slightly */
+        box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1); /* Lighter shadow */
+    }
+
+    .org-login-title {
+        font-size: 1.25rem; /* Smaller form title */
+        margin-bottom: 1rem;
+    }
+
+    /* Form adjustments */
+    .org-login-form {
+        gap: 1rem; /* Reduce gap between form elements */
+    }
+
+    .org-login-form-group input {
+        padding: 0.75rem; /* Consistent padding */
+        font-size: 0.95rem; /* Slightly smaller text */
+    }
+
+    .org-login-form-group label {
+        font-size: 0.8rem; /* Smaller labels */
+        margin-bottom: 0.3rem;
+    }
+
+    /* Button adjustments */
+    .org-login-submit-button {
+        padding: 0.8rem 1.5rem;
+        font-size: 0.95rem;
+        margin-top: 0.75rem;
+    }
+
+    /* Form options mobile layout */
+    .org-login-form-options {
+        flex-direction: column; /* Stack on mobile */
+        align-items: flex-start;
+        gap: 0.5rem;
+        font-size: 0.8rem;
+    }
+
+    .org-login-remember-me {
+        align-self: flex-start;
+    }
+
+    .org-login-forgot-password-link {
+        align-self: flex-end;
+    }
+
+    /* Register prompt adjustments */
+    .org-login-register-prompt {
+        margin-top: 1.5rem;
+        font-size: 0.8rem;
+    }
+
+    .org-login-message-box {
+        margin-top: 1rem;
+        padding: 0.6rem 0.8rem;
+        font-size: 0.85rem;
+    }
+}
+
+/* Extra small screens */
+@media (max-width: 480px) {
+    .org-login-hero-bg {
+        padding: 1.5rem 0.75rem;
+    }
+
+    .org-login-hero-content .org-login-title-text {
+        font-size: 1.3rem;
+    }
+
+    .org-login-main {
+        padding: 0 0.75rem 1.5rem 0.75rem;
+    }
+
+    .org-login-container {
+        padding: 1.25rem;
+    }
+}
+
+/* Footer styles (assuming shared component, keep as is or prefix if needed) */
+/* The footer in the image is not shown, so assuming the existing Footer component is used
+   and its styles are defined separately or are generic.
+   If 'main-footer' is specific to this component and needs renaming: */
+/* .org-login-main-footer { ... } */

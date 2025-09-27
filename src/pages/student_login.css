@@ -161,7 +161,7 @@
     .nav-links { display: flex; }
     .header-title { font-size: 1.5rem; }
     .org-login-btn { display: block; }
-    .hero-bg { padding: 7rem 3rem; }
+    .hero-bg { padding: 6rem 3rem; }
     .hero-text .title { font-size: 3rem; }
     .login-main { margin-top: -5rem; }
     .footer-grid { grid-template-columns: repeat(3, 1fr); }

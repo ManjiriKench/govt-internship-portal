@@ -17,7 +17,7 @@
 .hero-bg {
     background: #1c322b url('https://placehold.co/1920x1080/1c322b/1c322b?text=') center center/cover;
     color: #ffffff;
-    padding: 5rem 1.5rem;
+    padding: 6rem 1.5rem;
     position: relative;
 }
 .hero-content {
@@ -25,7 +25,7 @@
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
-    gap: 3rem;
+    gap: 1rem;
     max-width: 2000px;
     margin: 0 auto;
 }
@@ -39,6 +39,47 @@
 .hero-image-container { flex: 0 0 auto; display: flex; justify-content: center; transition: transform 0.5s; }
 .hero-image-container:hover { transform: scale(1.05); }
 .hero-image-container img { border-radius: 0.5rem; box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1), 0 4px 6px -2px rgba(0,0,0,0.05); width: 300px; height: auto; }
+
+@media (max-width: 767px) {
+    .hero-bg {
+        padding: 3rem 1.5rem; /* Reduce padding */
+    }
+
+    .hero-content {
+        flex-direction: column; /* Stack vertically */
+        text-align: center; /* Center align on mobile */
+        gap: 2rem;
+    }
+
+    .hero-text {
+        flex: none;
+        width: 100%;
+    }
+
+    .hero-text .subtitle {
+        font-size: 1rem; /* Smaller subtitle */
+    }
+
+    .hero-text .title {
+        font-size: 2rem; /* Smaller main title */
+        line-height: 1.1;
+    }
+
+    .hero-text .description {
+        font-size: 0.9rem; /* Slightly smaller description */
+        margin-top: 1rem;
+    }
+
+    .hero-image-container {
+        flex: none;
+        width: 100%;
+    }
+
+    .hero-image-container img {
+        width: 250px; /* Smaller image */
+        max-width: 90%;
+    }
+    }
 
 /* Common Section Styles */
 .content-section { padding: 4rem 1.5rem; text-align: center; }
@@ -155,7 +196,52 @@
     left: calc(50% - 3rem);
 }
 
+/* Mobile Timeline Fixes - Add these to your existing CSS */
 
+/* Mobile-only timeline adjustments */
+@media (max-width: 767px) {
+    .timeline-line {
+        left: 1.25rem; /* Move line to left side */
+        transform: none;
+    }
+
+    .timeline-step {
+        justify-content: flex-start; /* Align all to left */
+        margin: 2rem 0; /* Reduce vertical spacing */
+    }
+
+    /* Reset all content wrappers to left alignment */
+    .timeline-step-content-wrapper.odd,
+    .timeline-step-content-wrapper.even {
+        margin-left: 3.5rem; /* Space from line */
+        margin-right: 0;
+        padding-left: 0;
+        padding-right: 0;
+        width: calc(100% - 3.5rem);
+    }
+
+    /* Reset all cards to consistent left styling */
+    .timeline-step:nth-child(odd) .timeline-step-card,
+    .timeline-step:nth-child(even) .timeline-step-card {
+        margin-left: 0;
+        text-align: left;
+        width: 100%;
+    }
+
+    /* Position numbers on the left line */
+    .timeline-step-number {
+        left: 0.125rem; /* Centered on left line */
+        top: 1.5rem; /* Align with card top */
+        transform: none;
+        transition: none; /* Remove hover effects */
+    }
+
+    /* Remove mobile hover effects */
+    .timeline-step:nth-child(odd) .timeline-step-card:hover ~ .timeline-step-number,
+    .timeline-step:nth-child(even) .timeline-step-card:hover ~ .timeline-step-number {
+        left: 0.125rem; /* Keep in place */
+    }
+}
 
 /* Eligibility & Benefits Section */
 .eligibility-benefits-grid { max-width: 80rem; margin: 0 auto; display: grid; grid-template-columns: 1fr; gap: 2rem; }
@@ -287,6 +373,6 @@
 }
 
 @media (min-width: 1024px) {
-    .main-nav, .hero-bg, .content-section, .internships-section { padding-left: 6rem; padding-right: 6rem; }
+    .main-nav, .hero-bg, .content-section, .internships-section { padding-left: 4rem; padding-right: 4rem; }
     .eligibility-benefits-grid { grid-template-columns: repeat(2, 1fr); }
 }
