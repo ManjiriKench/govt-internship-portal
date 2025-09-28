@@ -10,6 +10,9 @@ import './App.css';
 import OrganizationLogin from "./pages/organization_login.jsx";
 import OrganizationRegister from "./pages/organization_register.jsx";
 import OrganizationDashboard from "./pages/organization_dashboard.jsx";
+import Application_submitted from "./pages/application_submitted.jsx";
+import AdminLogin from "./pages/admin_login.jsx";
+import AdminDashboard from "./pages/admin_dashboard.jsx";
 
 function App() {
     return (
@@ -24,6 +27,9 @@ function App() {
             <Route path="/organization-login" element={<OrganizationLogin />} />
             <Route path="/organization-register" element={<OrganizationRegister />} />
             <Route path="/organization-dashboard" element={<OrganizationDashboard />} />
+            <Route path="/application-submitted" element={<Application_submitted />} />
+            <Route path="/admin-login" element={<AdminLogin />} />
+            <Route path="/admin-dashboard" element={<AdminDashboard/>} />
         </Routes>
     );
 }

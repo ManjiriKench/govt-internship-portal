@@ -59,7 +59,7 @@ function Apply() {
 
     const handleSubmit = () => {
         console.log(`Submitting application for internship ID: ${internshipId}`);
-        navigate('/success');
+        navigate('/application-submitted');
     };
 
     if (!internshipDetails) {
